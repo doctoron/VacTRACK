@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <a className="navbar-brand" href="#">
+    <a className="navbar-brand" href="./index.html">
       VacTrack
   </a>
     <button
@@ -24,7 +24,7 @@ const NavBar = () => (
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="https://www.who.int/campaigns/immunization-week/2018/en/">
+          <a className="nav-link" href="https://www.who.int/campaigns/immunization-week/2018/en/" target="_blank">
             World Immunization Week
         </a>
         </li>
@@ -41,15 +41,15 @@ const NavBar = () => (
             Resources 
         </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item" href="#">
-              CDC.gov
-          </a>
-            <a className="dropdown-item" href="#">
-            WHO-World Health Organization 
+            <a className="dropdown-item" href="http://www2.cdc.gov/nip/adultimmsched/" target ="_blank">
+            Take the Adult Vaccination Quiz 
+          </a> 
+            <a className="dropdown-item" href="http://apps.who.int/worldimmunizationweek/" target = "_blank">
+            Take the #vaccineswork Quiz
           </a>
             <div className="dropdown-divider" />
             <a className="dropdown-item" href="#">
-              {/* Something else here */}
+              Something else here
           </a>
           </div>
         </li>
