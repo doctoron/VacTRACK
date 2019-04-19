@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
+// import Header from './components/Header/Header';
+// import Disclaimer from './components/Disclaimer/Disclaimer';
+// import Register from './components/Register/Register';
+// import MultiStepForm from './components/Forms/MultiStepForm';
+// import Container from './components/Container';
+// import Row from './components/Row';
+// import Column from './components/Column';
 
+
+import './App.css';
 class App extends Component {
-  render() {
+  render () {
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <NavBar />
         </header>
       </div>
     );
