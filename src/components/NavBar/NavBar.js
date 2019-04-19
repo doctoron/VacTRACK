@@ -24,7 +24,7 @@ const NavBar = () => (
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="nav-link" href="https://www.who.int/campaigns/immunization-week/2018/en/">
             World Immunization Week
         </a>
         </li>
