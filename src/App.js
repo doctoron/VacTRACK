@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-// import Header from './components/Header/Header';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 // import Disclaimer from './components/Disclaimer/Disclaimer';
 // import Register from './components/Register/Register';
 // import MultiStepForm from './components/Forms/MultiStepForm';
