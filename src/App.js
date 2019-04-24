@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import Question from './components/Question';
 // import Header from './components/Header/Header';
 // import Disclaimer from './components/Disclaimer/Disclaimer';
 // import Register from './components/Register/Register';
