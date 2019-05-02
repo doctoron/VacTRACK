@@ -1,3 +1,4 @@
+const MultiStep = import from ('react-multistep');
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");

@@ -1,8 +1,8 @@
-import StepZilla from "react-stepzilla";
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Question from './components/Question';
+const MultiStep = import from ('react-multistep')
 // import Header from './components/Header/Header';
 // import Disclaimer from './components/Disclaimer/Disclaimer';
 // import Register from './components/Register/Register';
