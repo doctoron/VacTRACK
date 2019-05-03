@@ -7,6 +7,6 @@ const VTSignupSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const VTSignup = mongoose.model("Book", VTSignupSchema);
+const VTSignup = mongoose.model("members", VTSignupSchema);
 
 module.exports = VTSignup;

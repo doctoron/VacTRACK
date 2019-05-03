@@ -1,3 +1,3 @@
 module.exports = {
-  Book: require("./VTSignup")
+  members: require("./VTSignup")
 };
