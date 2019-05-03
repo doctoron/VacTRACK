@@ -1,0 +1,15 @@
+.modal-header, 
+.modal-title,
+.modal-body, 
+.modal-footer {
+    background-color: white;
+    color: black;
+}
+.tnka {
+    background-color: white;
+    color: black;
+}
+h5.modal-title {
+    background-color: white;
+    color: black;
+}
