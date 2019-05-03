@@ -1,9 +1,19 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React from 'react';
+import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Forms from '../Forms';
+import { 
+  Button, 
+  Modal, 
+  ModalHeader, 
+  ModalBody, 
+  ModalFooter, 
+  Form, 
+  FormGroup, 
+  Label, 
+  Input } 
+  from 'reactstrap';
+// import Forms from '../Forms';
 import Login from '../LoginModal/Login';
 
 class LoginModal extends React.Component {
@@ -14,7 +24,8 @@ class LoginModal extends React.Component {
       nestedModal: false,
       closeAll: false,
       username: "",
-      password: ""
+      password: "",
+      authenticated: false
     };
 
     this.toggle = this.toggle.bind(this);
@@ -46,7 +57,7 @@ class LoginModal extends React.Component {
     const { username, password, authenticated } = this.state;
     if (authenticated) {
       return <Redirect to="/" />
-    }
+    } 
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>{this.props.Login}</Button>
@@ -61,7 +72,9 @@ class LoginModal extends React.Component {
             <Button color="success" onClick={this.toggleNested}>Register</Button>
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
               <ModalHeader>Registration Form</ModalHeader>
-              <ModalBody>{Forms}</ModalBody>
+              <ModalBody>
+                {Form}
+              </ModalBody>
               <ModalFooter>
                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
                 <Button color="secondary" onClick={this.toggleAll}>All Done</Button>

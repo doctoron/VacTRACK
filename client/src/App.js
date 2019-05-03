@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/MenuBar';
+import {Jumbotron, Button, Alert, Fade } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+
 // import { Button } from 'reactstrap';
 // import Modal from "./components/Modal/loginModal";
 // import Header from './components/Header/Header';
