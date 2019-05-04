@@ -1,8 +1,21 @@
 {
+<<<<<<< HEAD
   "name": "mern",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+=======
+  "name": "vactrack",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "mongoose": "^5.5.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
+    "reactstrap": "^8.0.0"
+  },
+>>>>>>> 03fdb586a9f46a9621e0298bad98564b5448c6e6
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
