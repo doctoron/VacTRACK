@@ -30,6 +30,7 @@ export default class MenuBar extends React.Component {
     });
   }
   render () {
+    console.log(this.props)
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -39,7 +40,7 @@ export default class MenuBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink tag={Modal}> </NavLink>
+                <Modal name=""/>
               </NavItem>
               <NavItem>
                 <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="">
@@ -47,23 +48,23 @@ export default class MenuBar extends React.Component {
                 {/* <NavLink href="/components/">Components</NavLink> */}
               </NavItem>
               <NavItem>
-                <NavLink> </NavLink>
+                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">  </NavLink>
                 {/* <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink> */}
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Resources
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Immunization Assessment Tool</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    <NavLink href="http://apps.who.int/worldimmunizationweek/">Test Your Vaccination Knowledge</NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                    Blog
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
