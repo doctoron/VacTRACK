@@ -1,88 +1,51 @@
 import React from 'react';
+import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-// const Register = props =>
-//   <div className={`Register${props.fluid ? "-fluid" : ""}`}>
-//   {/* Need {props.children} in order to display all of the photos */}
-//     {props.children}
 
 //     This is the register component
 
 export default class Register extends React.Component {
-  render() {
+  state = {
+    email: "",
+    username: "",
+    password: ""
+  }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const registerData = {
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password
+    }
+    Axios.post('/api/members', registerData)
+      .then(results => {
+        console.log('Result:', results);
+      })
+  }
+
+  render () {
     return (
       <Form>
         <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+          <Label for="username">username</Label>
+          <Input type="text" name="username" id="username" placeholder="username" onChange={this.handleChange} />
         </FormGroup>
         <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="password" />
+          <Label for="email">Email</Label>
+          <Input type="email" name="email" id="email" placeholder="email" onChange={this.handleChange} />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleSelect">Select</Label>
-          <Input type="select" name="select" id="exampleSelect">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
+          <Label for="password">Password</Label>
+          <Input type="password" name="password" id="Password" placeholder="password" onChange={this.handleChange} />
         </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelectMulti">Select Multiple</Label>
-          <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleText">Text Area</Label>
-          <Input type="textarea" name="text" id="exampleText" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleFile">File</Label>
-          <Input type="file" name="file" id="exampleFile" />
-          <FormText color="muted">
-            This is some placeholder block-level help text for the above input.
-            It's a bit lighter and easily wraps to a new line.
-          </FormText>
-        </FormGroup>
-        <FormGroup tag="fieldset">
-          <legend>Radio Buttons</legend>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" />{' '}
-              Option one is this and that—be sure to include why it's great
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" />{' '}
-              Option two can be something else and selecting it will deselect option one
-            </Label>
-          </FormGroup>
-          <FormGroup check disabled>
-            <Label check>
-              <Input type="radio" name="radio1" disabled />{' '}
-              Option three is disabled
-            </Label>
-          </FormGroup>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Check me out
-          </Label>
-        </FormGroup>
-        <Button>Submit</Button>
+        <Button onClick={this.handleSubmit}>Submit</Button>
       </Form>
     );
   }
 }
-
-// export default Register;

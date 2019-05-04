@@ -64,7 +64,7 @@ export default class MenuBar extends React.Component {
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Blog
+                    Blog (Future Enhancement)
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

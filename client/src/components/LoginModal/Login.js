@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
 class Modal extends Component {
     state = {
+        email: '',
         username: '',
-        password: '',
-        successfulLogin: false
+        password: ''
     }
-    handleChange = event => {
+    handleChange = (event) => {
         const { name, value } = event.target;
         this.setState({
-            [name]: value
+            [event.target.name]: event.target.value
         })
     }
-    handleSubmit = event => {
+    handleSubmit = (event) => {
         event.preventDefault();
+        const registerData = {
+            email: this.state.email,
+            username: this.state.username,
+            password: this.state.password
+    }
+    Axios.post('/api/members', registerData)
+    .then(results => {
+        console.log('Login:', results);
+    })
         // cool API call 
         // if() {
         //     // USERNAME AND PASSWORD ARE CORRECT AND USER EXISTS
@@ -25,7 +35,7 @@ class Modal extends Component {
         //     // USERNAME DOESN'T EXIST
         //     this.setState({error: "Username doesn't exist"})
         // }
-        this.setState({ successfulLogin: true })
+        // this.setState({ successfulLogin: true })
     }
     render () {
         const { username, password, successfulLogin } = this.state;
