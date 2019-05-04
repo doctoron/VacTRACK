@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
-
+import Login from '../LoginModal/Login'
+import Modal from '../LoginModal/Modal'
 export default class Example extends React.Component {
   constructor (props) {
     super(props);
@@ -22,17 +23,17 @@ export default class Example extends React.Component {
     <div>
         <Nav pills>
           <NavItem>
-          <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="">
-                World Immunization Week </NavLink>
+          <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">
+                <h2>VacTRACK</h2> </NavLink>
           </NavItem>
             <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <DropdownToggle nav caret>
-                  Dropdown
+                  MyVacTRACK
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem disabled>Action</DropdownItem>
-                <DropdownItem>Another Action</DropdownItem>
+                <DropdownItem header></DropdownItem>
+                <DropdownItem nav={Modal}>MyVac</DropdownItem>
+                <DropdownItem nav={Login}>Login</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>Another Action</DropdownItem>
               </DropdownMenu>
