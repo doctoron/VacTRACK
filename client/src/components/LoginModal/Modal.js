@@ -73,7 +73,7 @@ class LoginModal extends React.Component {
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
               <ModalHeader>Registration Form</ModalHeader>
               <ModalBody>
-                {Form}
+                {/* {Form} */}
               </ModalBody>
               <ModalFooter>
                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
