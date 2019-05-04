@@ -1,76 +1,53 @@
-import React, { Link } from 'react';
-import Modal from '../LoginModal';
-import {
-  Button,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from 'reactstrap';
+import React from 'react';
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
-export default class MenuBar extends React.Component {
+export default class Example extends React.Component {
   constructor (props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      dropdownOpen: false
     };
   }
+
   toggle () {
     this.setState({
-      isOpen: !this.state.isOpen
+      dropdownOpen: !this.state.dropdownOpen
     });
   }
+
   render () {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand>VacTRACK</NavbarBrand>
-          {/* <NavbarBrand href="/">VacTRACK</NavbarBrand> */}
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink tag={Modal}> </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="">
-                  World Immunization Week </NavLink>
-                {/* <NavLink href="/components/">Components</NavLink> */}
-              </NavItem>
-              <NavItem>
-                <NavLink> </NavLink>
-                {/* <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink> */}
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
-}
+    <div>
+        <Nav pills>
+          <NavItem>
+          <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="">
+                World Immunization Week </NavLink>
+          </NavItem>
+            <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <DropdownToggle nav caret>
+                  Dropdown
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem header>Header</DropdownItem>
+                <DropdownItem disabled>Action</DropdownItem>
+                <DropdownItem>Another Action</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Another Action</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+                <NavItem>
+                  <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">World Immunization Week </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Vaccine Assessment Tool</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="http://apps.who.int/worldimmunizationweek/" >Test Your Knowledge Quiz</NavLink>
+                </NavItem>
+        </Nav>
+    </div>
+            );
+          }
+        }
