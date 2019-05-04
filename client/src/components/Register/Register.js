@@ -18,7 +18,7 @@ export default class Register extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+          <Input type="password" name="password" id="examplePassword" placeholder="password" />
         </FormGroup>
         <FormGroup>
           <Label for="exampleSelect">Select</Label>
