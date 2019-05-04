@@ -16,9 +16,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 class App extends Component {
-  state = {
-    name: ""
-  };
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      name: "Karina"
+    };
+  }
+ 
   getUserInfo () {
     this.setState({
       name: "",
@@ -30,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <NavBar/>
+        <NavBar name={this.state.name}/>
           {/* <Button>Test</Button> */}
         </header>
       </div>

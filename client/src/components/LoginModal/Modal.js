@@ -1,17 +1,19 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { 
-  Button, 
-  Modal, 
-  ModalHeader, 
-  ModalBody, 
-  ModalFooter, 
-  Form, 
-  FormGroup, 
-  Label, 
-  Input } 
+import Register from '../Register/Register';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Input
+}
   from 'reactstrap';
 // import Forms from '../Forms';
 import Login from '../LoginModal/Login';
@@ -57,27 +59,39 @@ class LoginModal extends React.Component {
     const { username, password, authenticated } = this.state;
     if (authenticated) {
       return <Redirect to="/" />
-    } 
+    }
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>{this.props.Login}</Button>
+        <Button color="danger" onClick={this.toggle}>{this.props.name} MyVacTrack</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>MyVacTRACK Login</ModalHeader>
           <ModalBody>
 
             <form>
 
+              <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" id="exampleEmail" placeholder="e-mail address" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword">Password</Label>
+                <Input type="password" name="password" id="examplePassword" placeholder="password" />
+              </FormGroup>
+              This is the form. Put the form data here
             </form>
             <br />
             <Button color="success" onClick={this.toggleNested}>Register</Button>
+
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
               <ModalHeader>Registration Form</ModalHeader>
               <ModalBody>
-                {/* {Form} */}
+
+                <Register />
+
               </ModalBody>
               <ModalFooter>
                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
-                <Button color="secondary" onClick={this.toggleAll}>All Done</Button>
+                {/* <Button color="secondary" onClick={this.toggleAll}>All Done</Button> */}
               </ModalFooter>
             </Modal>
           </ModalBody>
