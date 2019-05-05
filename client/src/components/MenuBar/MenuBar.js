@@ -40,16 +40,15 @@ export default class MenuBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Modal name=""/>
+                {/* <Modal name=""/> */}
+                <Modal />
               </NavItem>
               <NavItem>
-                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="">
+                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">
                   World Immunization Week </NavLink>
-                {/* <NavLink href="/components/">Components</NavLink> */}
               </NavItem>
               <NavItem>
                 <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">  </NavLink>
-                {/* <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink> */}
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -57,7 +56,7 @@ export default class MenuBar extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Immunization Assessment Tool</NavLink>
+                    <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Immunization Assessment Tool</NavLink>
                   </DropdownItem>
                   <DropdownItem>
                     <NavLink href="http://apps.who.int/worldimmunizationweek/">Test Your Vaccination Knowledge</NavLink>

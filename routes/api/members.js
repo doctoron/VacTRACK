@@ -5,7 +5,7 @@ const members = require("../../controllers/memberController");
 router.route("/")
   .get(members.findAll)
   .post(members.create)
-  .post(member.findOne)
+  .post(members.findOne)
 
 // Matches with "/api/books/:id"
 router.route("/:id")
