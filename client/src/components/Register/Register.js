@@ -315,7 +315,7 @@ export default class Register extends React.Component {
             </Label>
           </FormGroup> */}
         </FormGroup>
-              
+
         {/* <FormGroup check>
           <Label check>
             <Input type="checkbox" />{' '}
@@ -323,9 +323,9 @@ export default class Register extends React.Component {
           </Label>
 
         </FormGroup> */}
-
-        <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5>
-        <Button>My Results</Button>
+        <FormGroup>
+          <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5>
+          <Button>My Results</Button>
         </FormGroup>
         <Button>Submit</Button>
       </Form>
