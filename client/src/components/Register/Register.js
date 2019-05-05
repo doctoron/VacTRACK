@@ -53,25 +53,188 @@ export default class Register extends React.Component {
           </FormText>
         </FormGroup>
         <FormGroup tag="fieldset">
-          <legend>Radio Buttons</legend>
+          <legend>Questionnaire</legend>
           <FormGroup check>
             <Label check>
+              <h5>1. Are you?...</h5>
               <Input type="radio" name="radio1" />{' '}
-              Option one is this and that—be sure to include why it's great
+              Male
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
               <Input type="radio" name="radio1" />{' '}
-              Option two can be something else and selecting it will deselect option one
+              Female
             </Label>
           </FormGroup>
-          <FormGroup check disabled>
+
+          <br/>
+
+          <FormGroup check>
+            <Label check>
+              <h5>2. What year were you born? (some vaccines are age-related)</h5>
+              {/* Add a year select dropdown */}
+              <Input type="radio" name="radio1" />{' '}
+              Male
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Female
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>3. Do you have a weakened immune system due to illness or medications?</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Yes
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              No
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>4. Do you have HIV infection?</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Yes
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              No
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Are you a first-year college student who lives in a college dormitory or a new military recruit?</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Yes
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              No
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Do you work with patients in a doctor’s office, hospital, nursing home, or other health care setting?</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Yes
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              No
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Are you?...</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Male
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Female
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Are you?...</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Male
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Female
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Are you?...</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Male
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Female
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Are you?...</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Male
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Female
+            </Label>
+          </FormGroup>
+          
+          <br/>
+          
+          <FormGroup check>
+            <Label check>
+              <h5>Are you?...</h5>
+              <Input type="radio" name="radio1" />{' '}
+              Male
+            </Label>
+          </FormGroup>
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="radio1" />{' '}
+              Female
+            </Label>
+          </FormGroup>
+
+          {/* <FormGroup check disabled>
             <Label check>
               <Input type="radio" name="radio1" disabled />{' '}
               Option three is disabled
             </Label>
-          </FormGroup>
+          </FormGroup> */}
         </FormGroup>
         <FormGroup check>
           <Label check>
