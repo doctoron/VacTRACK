@@ -2,6 +2,9 @@
   "name": "mern",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "10.15.2"
+  },
   "main": "server.js",
   "name": "vactrack",
   "version": "0.1.0",
