@@ -66,16 +66,16 @@ class LoginModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>MyVacTRACK Login</ModalHeader>
           <ModalBody>
-            <div>
+            <Form>
               <FormGroup>
                 <Label for="Email">e-mail</Label>
                 <Input type="email" name="email" id="eEmail" placeholder="e-mail address" />
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="Password" placeholder="password" />
+                <Label for="password">Password</Label>
+                <Input type="password" name="password" id="password" placeholder="password" />
               </FormGroup>
-            </div>
+            </Form>
             <br />
             <Button color="success" onClick={this.toggleNested}> Register </Button> First Visit?
 

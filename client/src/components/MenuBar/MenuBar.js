@@ -1,4 +1,4 @@
-import React, { Link } from 'react';
+import React from 'react';
 import Modal from '../LoginModal';
 import {
   Button,
@@ -34,13 +34,12 @@ export default class MenuBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand>VacTRACK</NavbarBrand>
-          {/* <NavbarBrand href="/">VacTRACK</NavbarBrand> */}
+          <NavbarBrand href="/">VacTRACK</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                {/* <Modal name=""/> */}
+                {/* <Modal name="Denise"/> */}
                 <Modal />
               </NavItem>
               <NavItem>

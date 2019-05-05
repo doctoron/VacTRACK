@@ -43,7 +43,7 @@ class App extends Component {
         </header>
         <Jumbotron>
         <RoundAbout />
-          <h1>Hello World!</h1>
+          <h1>Say Something!</h1>
         </Jumbotron>
         <br />
         <FluidJumbo />
