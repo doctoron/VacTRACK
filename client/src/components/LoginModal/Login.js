@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
-class Modal extends Component {
+class Login extends Component {
     state = {
-        username: '',
-        password: '',
-        successfulLogin: false
+        email: '',
+        // username: '',
+        password: ''
     }
-    handleChange = event => {
+    handleChange = (event) => {
         const { name, value } = event.target;
         this.setState({
-            [name]: value
+            [event.target.name]: event.target.value
         })
+        console.log("Login State:", this.setState);
     }
-    handleSubmit = event => {
+    handleSubmit = (event) => {
         event.preventDefault();
+        const registerData = {
+            email: this.state.email,
+            // username: this.state.username,
+            password: this.state.password
+        }
+        Axios.get('/api/members', registerData)
+            .then(results => {
+                console.log('Attempted Login:', results);
+            })
+            .catch(error => {
+                console.log(error.response);
+            })
         // cool API call 
-        // if() {
         //     // USERNAME AND PASSWORD ARE CORRECT AND USER EXISTS
         //     this.setState({successfulLogin: true})
         // } else if () {
@@ -25,7 +38,7 @@ class Modal extends Component {
         //     // USERNAME DOESN'T EXIST
         //     this.setState({error: "Username doesn't exist"})
         // }
-        this.setState({ successfulLogin: true })
+        // this.setState({ successfulLogin: true })
     }
     render () {
         const { username, password, successfulLogin } = this.state;
@@ -59,4 +72,4 @@ class Modal extends Component {
     }
 }
 
-export default Modal;
+export default Login;

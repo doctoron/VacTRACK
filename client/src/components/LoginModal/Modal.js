@@ -66,39 +66,42 @@ class LoginModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>MyVacTRACK Login</ModalHeader>
           <ModalBody>
-
-            <form>
-
+            <Form>
               <FormGroup>
-                <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="e-mail address" />
+                <Label for="Email">e-mail</Label>
+                <Input type="email" name="email" id="eEmail" placeholder="e-mail address" />
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="password" />
+                <Label for="password">Password</Label>
+                <Input type="password" name="password" id="password" placeholder="password" />
               </FormGroup>
-              This is the form. Put the form data here
-            </form>
+            </Form>
             <br />
-            <Button color="success" onClick={this.toggleNested}>Register</Button>
+            <Button color="success" onClick={this.toggleNested}> Register </Button> First Visit?
 
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
-              <ModalHeader>Registration Form</ModalHeader>
+              <ModalHeader>Registration Form
+              </ModalHeader>
+
               <ModalBody>
-
                 <Register />
-
               </ModalBody>
+
               <ModalFooter>
                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
-                {/* <Button color="secondary" onClick={this.toggleAll}>All Done</Button> */}
               </ModalFooter>
+
             </Modal>
+          
           </ModalBody>
+          
           <ModalFooter>
+          
             <Button color="primary" onClick={this.toggle}>Login</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          
           </ModalFooter>
+        
         </Modal>
       </div>
     );

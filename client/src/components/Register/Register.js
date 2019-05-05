@@ -1,22 +1,43 @@
 import React from 'react';
+import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-// const Register = props =>
-//   <div className={`Register${props.fluid ? "-fluid" : ""}`}>
-//   {/* Need {props.children} in order to display all of the photos */}
-//     {props.children}
 
 //     This is the register component
 
 export default class Register extends React.Component {
-  render() {
+  state = {
+    email: "",
+    username: "",
+    password: ""
+  }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const registerData = {
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password
+    }
+    Axios.post('/api/members', registerData)
+      .then(results => {
+        console.log('Result:', results);
+      })
+  }
+
+  render () {
     return (
       <Form>
         <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+          <Label for="username">username</Label>
+          <Input type="text" name="username" id="username" placeholder="username" onChange={this.handleChange} />
         </FormGroup>
         <FormGroup>
+
           <Label for="examplePassword">Password</Label>
           <Input type="password" name="password" id="examplePassword" placeholder="password" />
         </FormGroup>
@@ -39,7 +60,14 @@ export default class Register extends React.Component {
             <option>4</option>
             <option>5</option>
           </Input>
+          <Label for="email">Email</Label>
+          <Input type="email" name="email" id="email" placeholder="email" onChange={this.handleChange} />
         </FormGroup>
+        <FormGroup>
+          <Label for="password">Password</Label>
+          <Input type="password" name="password" id="Password" placeholder="password" onChange={this.handleChange} />
+        </FormGroup>
+        <Button onClick={this.handleSubmit}>Submit</Button>
         <FormGroup>
           <Label for="exampleText">Text Area</Label>
           <Input type="textarea" name="text" id="exampleText" />
@@ -293,13 +321,14 @@ export default class Register extends React.Component {
             <Input type="checkbox" />{' '}
             Check me out
           </Label>
+
         </FormGroup> */}
 
         <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5>
         <Button>My Results</Button>
+        </FormGroup>
+        <Button>Submit</Button>
       </Form>
     );
   }
 }
-
-// export default Register;

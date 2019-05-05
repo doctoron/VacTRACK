@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/MenuBar';
-import {Jumbotron, Button, Alert, Fade } from 'reactstrap';
+import FluidJumbo from './components/FluidJumbo'
+import RoundAbout from './components/RoundAbout'
+import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 // import { Button } from 'reactstrap';
@@ -20,10 +22,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      name: "Karina"
+      name: "Denise"
     };
   }
- 
+
+
   getUserInfo () {
     this.setState({
       name: "",
@@ -35,9 +38,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <NavBar name={this.state.name}/>
+          <NavBar name={this.state.name} />
           {/* <Button>Test</Button> */}
         </header>
+        <Jumbotron>
+        <RoundAbout />
+          <h1>Say Something!</h1>
+        </Jumbotron>
+        <br />
+        <FluidJumbo />
+    
       </div>
     );
   }
