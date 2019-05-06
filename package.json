@@ -1,10 +1,12 @@
 {
-  "name": "mern",
-  "version": "1.0.0",
+  "name": "vacktrack",
+  "version": "0.2.0",
   "description": "",
   "main": "server.js",
-  "name": "vactrack",
-  "version": "0.1.0",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "private": true,
   "dependencies": {
     "mongoose": "^5.5.5",
