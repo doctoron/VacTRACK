@@ -1,5 +1,6 @@
 import React from 'react';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
+import Cards from '../Cards';
 
 const FluidJumbo = (props) => {
   return (
@@ -7,9 +8,9 @@ const FluidJumbo = (props) => {
       <Jumbotron fluid>
         <Container fluid>
           <Row>
-            <Col xs="6" sm="4">.col-6 .col-sm-4</Col>
-            <Col xs="6" sm="4">.col-6 .col-sm-4</Col>
-            <Col sm="4">.col-sm-4</Col>
+            <Col xs="6" sm="4"><Cards /></Col>
+            <Col xs="6" sm="4"><Cards /></Col>
+            <Col sm="4"><Cards /></Col>
           </Row>
         </Container>
       </Jumbotron>
