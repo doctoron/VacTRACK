@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
-import DatePicker from 'react-datepicker';
+import DatePicker from '../DatePicker';
 import moment from 'moment';
 
 //     This is the register component
@@ -79,13 +79,12 @@ export default class Register extends React.Component {
         </FormGroup>
         <br />
         <FormText>
-          <h5>2. What year were you born? (some vaccines are age-related)</h5>
+          <h5>2. Date of Birth (Some vaccines are age-related)</h5>
         </FormText>
         <FormGroup>
-          <Label for="dob">Username</Label>
-          <Input type="text" name="dob" id="dob" placeholder="Date of Birth format 00/00/0000" onChange={this.handleChange} />
-          {/* <DatePicker /> */}
-          {/* <h5><i>[Add a year select dropdown]</i></h5> */}
+          {/* <Label for="dob">Picker</Label> */}
+          {/* <Input type="text" name="dob" id="dob" placeholder="Date of Birth format 00/00/0000" onChange={this.handleChange} /> */}
+          <DatePicker />
         </FormGroup>
         <FormText>
           <h5>3. Will you be traveling outside the U.S. in the near future?</h5>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
+import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import moment from 'moment';
-import {Dropdown, DropdownToggle, DropdownMenu, dropdownItem } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
 
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -31,32 +29,18 @@ class DatePicker extends Component {
         return (
             <Form>
                 <FormGroup>
-                    <FormText color="muted">
-                        <Label>Date of Birth</Label>
-                    </FormText>
+                    <Label for="dobDate">Date of Birth</Label>
+                    <Input
+                        type="date"
+                        name="date"
+                        id="dobDate"
+                        placeholder="date placeholder"
+                    />
                 </FormGroup>
-                <FormGroup>
-                    <Label check>
-                        Select Month / Date / Year:
-                    </Label>
-                    <Input onSubmit={this.handleSubmit}>
-                        <div className="dob_div">
-                            <label> Select Date: </label>
-                            <DatePicker
-                                selected={this.state.startDate}
-                                onChange={this.handleChange}
-                                name="dateOfBirth"
-                                dateFormat="MM/DD/YYYY"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-success">Select Date</button>
-                        </div>
-                </FormGroup>
-                </div>
-            </FormText >
-        );
+            </Form>
+        )
     }
 }
+
 
 export default DatePicker;
