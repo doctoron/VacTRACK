@@ -4,7 +4,7 @@ import Cards from '../Cards';
 
 const FluidJumbo = (props) => {
   return (
-    <div>
+    // <div>
       <Jumbotron fluid>
         <Container fluid>
           <Row>
@@ -14,7 +14,7 @@ const FluidJumbo = (props) => {
           </Row>
         </Container>
       </Jumbotron>
-    </div>
+    // </div>
   );
 };
 

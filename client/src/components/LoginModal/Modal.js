@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import Register from '../Register/Register';
 import {
   Button,
+  Card,
   Modal,
   ModalHeader,
   ModalBody,
@@ -77,12 +78,13 @@ class LoginModal extends React.Component {
               </FormGroup>
             </Form>
             <br />
-            <Button color="success" onClick={this.toggleNested}> Register </Button> First Visit?
+            <Button color="success" onClick={this.toggleNested}> Get Started </Button>
 
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
+            <Card body inverse color="success">
               <ModalHeader>Registration Form
               </ModalHeader>
-
+              </Card>
               <ModalBody>
                 <Register />
               </ModalBody>
