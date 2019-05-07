@@ -160,13 +160,13 @@ export default class Register extends React.Component {
           <FormGroup check>
             <Label check>
               <Input type="radio" name="radio1" />{' '}
-              Male
+              Yes
             </Label>
           </FormGroup>
           <FormGroup check>
             <Label check>
               <Input type="radio" name="radio1" />{' '}
-              Female
+              No
             </Label>
           </FormGroup>
 
@@ -287,7 +287,7 @@ export default class Register extends React.Component {
             </Label>
           </FormGroup> */}
         </FormGroup>
-              
+
         {/* <FormGroup check>
           <Label check>
             <Input type="checkbox" />{' '}
