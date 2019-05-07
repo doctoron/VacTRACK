@@ -1,6 +1,6 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Register from '../Register/Register';
 import {
@@ -17,7 +17,7 @@ import {
 }
   from 'reactstrap';
 // import Forms from '../Forms';
-import Login from '../LoginModal/Login';
+// import Login from '../LoginModal/Login';
 
 class LoginModal extends React.Component {
   constructor (props) {

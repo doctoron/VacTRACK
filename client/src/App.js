@@ -6,15 +6,6 @@ import RoundAbout from './components/RoundAbout'
 import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-// import { Button } from 'reactstrap';
-// import Modal from "./components/Modal/loginModal";
-// import Header from './components/Header/Header';
-// import Disclaimer from './components/Disclaimer/Disclaimer';
-// import Register from './components/Register/Register';
-// import MultiStepForm from './components/Forms/MultiStepForm';
-// import Container from './components/Container';
-// import Row from './components/Row';
-// import Column from './components/Column';
 import './App.css';
 
 class App extends Component {
@@ -46,7 +37,7 @@ class App extends Component {
           <h1>#vaccinationswork</h1>
         </Jumbotron>
         <br />
-        Health Science News Below:
+        <h3>Health Science News Below:</h3>
         <FluidJumbo />
     
       </div>

@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
-import DatePicker from '../DatePicker';
 import moment from 'moment';
 
 //     This is the register component
@@ -10,7 +9,16 @@ export default class Register extends React.Component {
     email: "",
     username: "",
     password: "",
-    answers: {}
+    gender: "",
+    dob: moment().subtract(18, "years").format('YYYY-MM-DD'),
+    travelling: false,
+    immunity: false,
+    hiv: false,
+    dormitory: false,
+    healthCareWorker: false,
+    conditions: false,
+    otherFactors: false,
+    zoster: false
   }
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,10 +29,21 @@ export default class Register extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(this.state)
     const registerData = {
       email: this.state.email,
+      password: this.state.password,
       username: this.state.username,
-      password: this.state.password
+      dob: this.state.dob,
+      gender: this.state.gender,
+      travelling: this.state.travelling,
+      immunity: this.state.immunity,
+      hiv: this.state.hiv,
+      dormitory: this.state.dormitory,
+      healthCareWorker: this.state.healthCareWorker,
+      conditions: this.state.conditions,
+      otherFactors: this.state.otherFactors,
+      zoster: this.state.zoster
     }
     Axios.post('/api/members', registerData)
       .then(results => {
@@ -33,6 +52,7 @@ export default class Register extends React.Component {
   }
 
   render () {
+    console.log(this.state.dob)
     return (
       <Form>
         <FormGroup>
@@ -67,13 +87,13 @@ export default class Register extends React.Component {
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio1" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="gender" value="male" onChange={this.handleChange} />{' '}
             Male
           </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio1" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="gender" value="female" onChange={this.handleChange} />{' '}
             Female
           </Label>
         </FormGroup>
@@ -82,22 +102,28 @@ export default class Register extends React.Component {
           <h5>2. Date of Birth (Some vaccines are age-related)</h5>
         </FormText>
         <FormGroup>
-          {/* <Label for="dob">Picker</Label> */}
-          {/* <Input type="text" name="dob" id="dob" placeholder="Date of Birth format 00/00/0000" onChange={this.handleChange} /> */}
-          <DatePicker />
+          <Label for="dobDate">Date of Birth</Label>
+          <Input
+            type="date"
+            name="dob"
+            value={this.state.dob}
+            id="dob"
+            placeholder="date placeholder"
+            onChange={this.handleChange}
+          />
         </FormGroup>
         <FormText>
           <h5>3. Will you be traveling outside the U.S. in the near future?</h5>
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio3" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="travelling" value="true" onChange={this.handleChange} />{' '}
             Yes
           </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio3" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="travelling" value="false" onChange={this.handleChange} />{' '}
             No
           </Label>
         </FormGroup>
@@ -107,13 +133,13 @@ export default class Register extends React.Component {
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio4" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="immunity" value="true" onChange={this.handleChange} />{' '}
             Yes
           </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio4" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="immunity" value="false" onChange={this.handleChange} />{' '}
             No
           </Label>
         </FormGroup>
@@ -124,30 +150,29 @@ export default class Register extends React.Component {
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio5" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="hiv" value="true" onChange={this.handleChange} />{' '}
             Yes
             </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio5" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="hiv" value="false" onChange={this.handleChange} />{' '}
             No
             </Label>
         </FormGroup>
         <br />
-
         <FormText>
           <h5>6. Are you a first-year college student who lives in a college dormitory or a new military recruit?</h5>
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio6" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="dormitory" value="true" onChange={this.handleChange} />{' '}
             Yes
             </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio6" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="dormitory" value="false" onChange={this.handleChange} />{' '}
             No
             </Label>
         </FormGroup>
@@ -158,139 +183,97 @@ export default class Register extends React.Component {
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio7" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="healthCareWorker" value="true" onChange={this.handleChange} />{' '}
             Yes
             </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio7" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="healthCareWorker" value="false" onChange={this.handleChange} />{' '}
             No
             </Label>
         </FormGroup>
         <br />
         <FormText>
-          <h5>8. Do you have any of these medical conditions?  Check all that apply to you.</h5>
+          <h5>8. Do you have any of the following medical conditions:</h5>
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Heart disease (for example, congestive heart failure)?
-          </Label>
+            <Input type="radio" name="conditions" value="true" onChange={this.handleChange} />{' '}
+            Yes
+            </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Diabetes mellitus type 1 or 2 (also called "sugar diabetes")?
-          </Label>
+            <Input type="radio" name="conditions" value="false" onChange={this.handleChange} />{' '}
+            No
+            </Label>
         </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Chronic lung disease (for example, Asthma and Chronic Obstructive Pulmonary Disease [COPD])?
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Kidney failure, end-stage renal disease, or are on dialysis?
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Chronic liver disease (for example, cirrhosis or alcoholic liver disease) or hepatitis C infection?
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Spleen has been damaged or removed (for example, due to surgery or sickle cell disease)?
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Cancer or cancer treatment?
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Bone marrow transplant?
-          </Label>
-        </FormGroup>
-        <br />
         <FormText>
-          <h5>9. Review the items listed below and check those that apply to you:</h5>
+          <ul>
+            <li>Heart disease (for example, congestive heart failure)</li>
+            <li>Diabetes mellitus type 1 or 2 (also called "sugar diabetes")</li>
+            <li>Chronic lung disease (for example, Asthma and Chronic Obstructive Pulmonary Disease [COPD])?</li>
+            <li>Kidney failure, end-stage renal disease, or are on dialysis</li>
+            <li>Chronic liver disease (for example, cirrhosis or alcoholic liver disease) or hepatitis C infection</li>
+            <li>Spleen has been damaged or removed (for example, due to surgery or sickle cell disease)</li>
+            <li>Cancer or cancer treatment</li>
+            <li>Bone marrow transplant</li>
+          </ul>
         </FormText>
+
+        <h5>9. Review the items listed below:</h5>
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Alcoholism
-          </Label>
+            <Input type="radio" name="otherFactors" value="true" onChange={this.handleChange} />{' '}
+            Yes
+            </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Smoke cigarettes
-          </Label>
+            <Input type="radio" name="otherFactors" value="false" onChange={this.handleChange} />{' '}
+            No
+            </Label>
         </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Man who has sex with men
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Homeless
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" onChange={this.handleChange} />{' '}
-            Factors that can increase your risk for hepatitis A or hepatitis B (such as travel to some countries, exposure to blood or bodily fluids, or exposure to contaminated food or drink)
-          </Label>
-        </FormGroup>
-        <br />
+        <FormText>
+          <ul>
+            <li>Alcoholism</li>
+            <li>Smoke cigarettes</li>
+            <li>Man who has sex with men</li>
+            <li>Homeless</li>
+            <li>Factors that can increase your risk for hepatitis A or hepatitis B (such as travel to some countries, exposure to blood or bodily fluids, or exposure to contaminated food or drink)</li>
+          </ul>
+        </FormText>
+
         <FormText>
           <h5>10. Have you had the chickenpox disease or received the chickenpox vaccine?</h5>
         </FormText>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio10" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="zoster" value="true" onChange={this.handleChange} />{' '}
             Yes
             </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio10" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="zoster" value="false" onChange={this.handleChange} />{' '}
             No
             </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio10" onChange={this.handleChange} />{' '}
+            <Input type="radio" name="zoster" value="false" onChange={this.handleChange} />{' '}
             Not Sure
             </Label>
         </FormGroup>
         <br />
         <FormGroup>
-          <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5>
-          <Button>My Results</Button>
-          {/* <Button>Submit</Button> */}
+          {/* <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5> */}
+          {/* <Button>My Results</Button> */}
+          <button onClick={this.handleSubmit}>Submit</button>
         </FormGroup>
       </Form >
     )
   }
 }
-
-
-
-
-
-
-
 
