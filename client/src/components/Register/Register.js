@@ -22,6 +22,7 @@ export default class Register extends React.Component {
   }
   handleChange = (event) => {
     const { name, value } = event.target;
+    console.log('Gender onChange',value);
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -52,7 +53,7 @@ export default class Register extends React.Component {
   }
 
   render () {
-    console.log(this.state.dob)
+    console.log(this.state)
     return (
       <Form>
         <FormGroup>
@@ -97,6 +98,7 @@ export default class Register extends React.Component {
             Female
           </Label>
         </FormGroup>
+        {this.state.gender==="female" ? <h1>Female Component Here</h1> : null}
         <br />
         <FormText>
           <h5>2. Date of Birth (Some vaccines are age-related)</h5>
