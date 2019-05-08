@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
 import Female from './Female';
+import HIV from './HIV';
 import moment from 'moment';
 
 //     This is the register component
@@ -23,7 +24,7 @@ export default class Register extends React.Component {
   }
   handleChange = (event) => {
     const { name, value } = event.target;
-    console.log('Gender onChange',value);
+    console.log('Gender onChange', value);
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -99,7 +100,7 @@ export default class Register extends React.Component {
             Female
           </Label>
         </FormGroup>
-        {this.state.gender==="female" ? <Female /> : null}
+        {this.state.gender === "female" ? <Female /> : null}
         <br />
         <FormText>
           <h5>2. Date of Birth (Some vaccines are age-related)</h5>
@@ -162,8 +163,9 @@ export default class Register extends React.Component {
             No
             </Label>
         </FormGroup>
-        <br />
+        {this.state.hiv === "true" ? <HIV /> : null}
         <FormText>
+          <br />
           <h5>6. Are you a first-year college student who lives in a college dormitory or a new military recruit?</h5>
         </FormText>
         <FormGroup check>
