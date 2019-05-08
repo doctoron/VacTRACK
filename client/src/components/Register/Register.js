@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
+import Female from './Female';
 import moment from 'moment';
 
 //     This is the register component
@@ -98,13 +99,12 @@ export default class Register extends React.Component {
             Female
           </Label>
         </FormGroup>
-        {this.state.gender==="female" ? <h1>Female Component Here</h1> : null}
+        {this.state.gender==="female" ? <Female /> : null}
         <br />
         <FormText>
           <h5>2. Date of Birth (Some vaccines are age-related)</h5>
         </FormText>
         <FormGroup>
-          <Label for="dobDate">Date of Birth</Label>
           <Input
             type="date"
             name="dob"
