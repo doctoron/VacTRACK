@@ -1,20 +1,23 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React, {Component} from 'react';
+import React from 'react';
 import { Redirect } from 'react-router-dom';
-import { 
-  Button, 
-  Modal, 
-  ModalHeader, 
-  ModalBody, 
-  ModalFooter, 
-  Form, 
-  FormGroup, 
-  Label, 
-  Input } 
+import Register from '../Register/Register';
+import {
+  Button,
+  Card,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Input
+}
   from 'reactstrap';
 // import Forms from '../Forms';
-import Login from '../LoginModal/Login';
+// import Login from '../LoginModal/Login';
 
 class LoginModal extends React.Component {
   constructor (props) {
@@ -57,34 +60,50 @@ class LoginModal extends React.Component {
     const { username, password, authenticated } = this.state;
     if (authenticated) {
       return <Redirect to="/" />
-    } 
+    }
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>{this.props.Login}</Button>
+        <Button color="danger" onClick={this.toggle}>{this.props.name} MyVacTrack</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>MyVacTRACK Login</ModalHeader>
           <ModalBody>
-
-            <form>
-
-            </form>
+            <Form>
+              <FormGroup>
+                <Label for="Email">e-mail</Label>
+                <Input type="email" name="email" id="eEmail" placeholder="e-mail address" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="password">Password</Label>
+                <Input type="password" name="password" id="password" placeholder="password" />
+              </FormGroup>
+            </Form>
             <br />
-            <Button color="success" onClick={this.toggleNested}>Register</Button>
+            <Button color="success" onClick={this.toggleNested}> Get Started </Button>
+
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
-              <ModalHeader>Registration Form</ModalHeader>
+            <Card body inverse color="success">
+              <ModalHeader>Registration Form
+              </ModalHeader>
+              </Card>
               <ModalBody>
-                {Form}
+                <Register />
               </ModalBody>
+
               <ModalFooter>
                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
-                <Button color="secondary" onClick={this.toggleAll}>All Done</Button>
               </ModalFooter>
+
             </Modal>
+          
           </ModalBody>
+          
           <ModalFooter>
+          
             <Button color="primary" onClick={this.toggle}>Login</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          
           </ModalFooter>
+        
         </Modal>
       </div>
     );

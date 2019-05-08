@@ -1,4 +1,4 @@
-import React, { Link } from 'react';
+import React from 'react';
 import Modal from '../LoginModal';
 import {
   Button,
@@ -30,40 +30,39 @@ export default class MenuBar extends React.Component {
     });
   }
   render () {
+    console.log(this.props)
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand>VacTRACK</NavbarBrand>
-          {/* <NavbarBrand href="/">VacTRACK</NavbarBrand> */}
+          <NavbarBrand href="/">VacTRACK</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink tag={Modal}> </NavLink>
+                {/* <Modal name="Denise"/> */}
+                <Modal />
               </NavItem>
               <NavItem>
-                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="">
+                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">
                   World Immunization Week </NavLink>
-                {/* <NavLink href="/components/">Components</NavLink> */}
               </NavItem>
               <NavItem>
-                <NavLink> </NavLink>
-                {/* <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink> */}
+                <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">  </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Resources
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Immunization Assessment Tool</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    <NavLink href="http://apps.who.int/worldimmunizationweek/">Test Your Vaccination Knowledge</NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                    Blog (Future Enhancement)
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
