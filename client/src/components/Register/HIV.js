@@ -1,20 +1,20 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
+import { FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const HIV = (props) => {
     return (
       <div> 
         <br />
-      <h5>What is your CD4 count?</h5>
+      <FormText><b>What is your CD4 count?</b></FormText>
         <FormGroup check id="HIV1">
           <Label check>
-            <Input type="checkbox" />{' '}
+            <Input type="checkbox" name="hiv" value="<200" onChange={props.handleChange}/>{' '}
             Under 200
           </Label>
         </FormGroup>
         <FormGroup check id="HIV2">
           <Label check>
-            <Input type="checkbox" />{' '}
+          <Input type="checkbox" name="hiv" value=">200" onChange={props.handleChange}/>{' '}
             200 or higher
           </Label>
         </FormGroup>

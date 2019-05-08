@@ -24,7 +24,7 @@ export default class Register extends React.Component {
   }
   handleChange = (event) => {
     const { name, value } = event.target;
-    console.log('Gender onChange', value);
+    // console.log('Gender onChange', value);
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -163,7 +163,7 @@ export default class Register extends React.Component {
             No
             </Label>
         </FormGroup>
-        {this.state.hiv === "true" ? <HIV /> : null}
+        {this.state.hiv === "true" ? <HIV handleChange={this.handleChange}/> : null}
         <FormText>
           <br />
           <h5>6. Are you a first-year college student who lives in a college dormitory or a new military recruit?</h5>
