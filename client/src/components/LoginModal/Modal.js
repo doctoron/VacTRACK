@@ -78,11 +78,11 @@ class LoginModal extends React.Component {
               </FormGroup>
             </Form>
             <br />
-            <Button color="success" onClick={this.toggleNested}> Get Started </Button>
+            <Button color="primary" onClick={this.toggle}>Login</Button>{' '}
 
             <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
-            <Card body inverse color="success">
-              <ModalHeader>Registration Form
+              <Card body inverse color="success">
+                <ModalHeader>Registration Form
               </ModalHeader>
               </Card>
               <ModalBody>
@@ -92,18 +92,13 @@ class LoginModal extends React.Component {
               <ModalFooter>
                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
               </ModalFooter>
-
             </Modal>
-          
           </ModalBody>
-          
           <ModalFooter>
-          
-            <Button color="primary" onClick={this.toggle}>Login</Button>{' '}
+            Not Yet Registered?
+            <Button color="success" onClick={this.toggleNested}> Get Started </Button> {' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-          
           </ModalFooter>
-        
         </Modal>
       </div>
     );

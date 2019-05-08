@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
 import Female from './Female';
 import HIV from './HIV';
+// import App from '../../App';
 import moment from 'moment';
 
 //     This is the register component
@@ -11,8 +12,9 @@ export default class Register extends React.Component {
     email: "",
     username: "",
     password: "",
+    confirmPassword: "",
     gender: "",
-    dob: moment().subtract(18, "years").format('YYYY-MM-DD'),
+    dob: moment().subtract(19, "years").format('YYYY-MM-DD'),
     travelling: false,
     immunity: false,
     hiv: false,
@@ -36,6 +38,7 @@ export default class Register extends React.Component {
     const registerData = {
       email: this.state.email,
       password: this.state.password,
+      confirmPassword: this.state.confirmPassword,
       username: this.state.username,
       dob: this.state.dob,
       gender: this.state.gender,
@@ -68,7 +71,13 @@ export default class Register extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="password">Password</Label>
-          <Input type="password" name="password" id="password" placeholder="password" onChange={this.handleChange} />
+          <Input type="password" name="password" id="password" placeholder="Make a Strong Password" onChange={this.handleChange} />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password">Confirm Password</Label>
+          <Input type="password" name="confirmPassword" id="confirmPassword" placeholder=" Confirm password" onChange={this.handleChange} />
+          {/* {this.state.password === this.state.confirmPassword ?  <App /> : "Passwords Must Match"} */}
+
         </FormGroup>
 
         <FormGroup tag="fieldset" row>
