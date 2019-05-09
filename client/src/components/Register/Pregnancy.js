@@ -1,30 +1,31 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 
-const Female = (props) => {
+const Pregnancy = (props) => {
   return (
     <div>
+      <br />
       <FormGroup check>
         <Label check>
-          <Input type="checkbox" />{' '}
+          <Input type="checkbox" name="potential" value = "potential"/>{' '}
           I could become pregnant
           </Label>
       </FormGroup>
       <FormGroup check>
         <Label check>
-          <Input type="checkbox" />{' '}
+          <Input type="checkbox" name="pregnant" value = "pregnant"/>{' '}
           I am pregnant now
           </Label>
       </FormGroup>
       <FormGroup check>
         <Label check>
-          <Input type="checkbox" />{' '}
+          <Input type="checkbox" name="noplan" value = "noplan"/>{' '}
           I am not planning to become pregnant
           </Label>
       </FormGroup>
       <FormGroup check>
         <Label check>
-          <Input type="checkbox" />{' '}
+          <Input type="checkbox" name="cannot" value="cannot" />{' '}
           I could not become pregnant
           </Label>
       </FormGroup>
@@ -32,4 +33,4 @@ const Female = (props) => {
   );
 };
 
-export default Female;
+export default Pregnancy;

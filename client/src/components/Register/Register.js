@@ -1,8 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
-import Female from './Female';
-import HIV from './HIV';
+import Pregnancy from './Pregnancy';
+import CD4 from './CD4';
 // import App from '../../App';
 import moment from 'moment';
 
@@ -14,10 +14,12 @@ export default class Register extends React.Component {
     password: "",
     confirmPassword: "",
     gender: "",
+    pregnancy: "",
     dob: moment().subtract(19, "years").format('YYYY-MM-DD'),
     travelling: false,
     immunity: false,
     hiv: false,
+    CD4: "",
     dormitory: false,
     healthCareWorker: false,
     conditions: false,
@@ -42,9 +44,11 @@ export default class Register extends React.Component {
       username: this.state.username,
       dob: this.state.dob,
       gender: this.state.gender,
+      pregnancy: this.state.pregnancy,
       travelling: this.state.travelling,
       immunity: this.state.immunity,
       hiv: this.state.hiv,
+      cd4: this.state.cd4,
       dormitory: this.state.dormitory,
       healthCareWorker: this.state.healthCareWorker,
       conditions: this.state.conditions,
@@ -73,12 +77,7 @@ export default class Register extends React.Component {
           <Label for="password">Password</Label>
           <Input type="password" name="password" id="password" placeholder="Make a Strong Password" onChange={this.handleChange} />
         </FormGroup>
-        <FormGroup>
-          <Label for="password">Confirm Password</Label>
-          <Input type="password" name="confirmPassword" id="confirmPassword" placeholder=" Confirm password" onChange={this.handleChange} />
-          {/* {this.state.password === this.state.confirmPassword ?  <App /> : "Passwords Must Match"} */}
-
-        </FormGroup>
+       
 
         <FormGroup tag="fieldset" row>
           {/* <Card body inverese color="success">Adult Vaccine Assessment Tool</Card> */}
@@ -109,7 +108,7 @@ export default class Register extends React.Component {
             Female
           </Label>
         </FormGroup>
-        {this.state.gender === "female" ? <Female /> : null}
+        {this.state.gender === "female" ? <Pregnancy /> : null}
         <br />
         <FormText>
           <h5>2. Date of Birth (Some vaccines are age-related)</h5>
@@ -172,7 +171,7 @@ export default class Register extends React.Component {
             No
             </Label>
         </FormGroup>
-        {this.state.hiv === "true" ? <HIV handleChange={this.handleChange}/> : null}
+        {this.state.hiv === "true" ? <CD4 handleChange={this.handleChange}/> : null}
         <FormText>
           <br />
           <h5>6. Are you a first-year college student who lives in a college dormitory or a new military recruit?</h5>

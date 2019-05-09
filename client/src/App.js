@@ -33,7 +33,7 @@ class App extends Component {
         </header>
         <Jumbotron>
         <RoundAbout />
-          <h3>#vaccinationswork</h3>
+          <h3>#vaccineswork</h3>
         </Jumbotron>
         <br />
         <h2>Health Science News Below:</h2>
