@@ -30,14 +30,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <NavBar name={this.state.name} />
-          {/* <Button>Test</Button> */}
         </header>
         <Jumbotron>
         <RoundAbout />
-          <h1>#vaccinationswork</h1>
+          <h3>#vaccineswork</h3>
         </Jumbotron>
         <br />
-        <h3>Health Science News Below:</h3>
+        <h2>Health Science News Below:</h2>
         <FluidJumbo />
     
       </div>
