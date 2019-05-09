@@ -7,11 +7,7 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter,
-    Form,
-    FormGroup,
-    Label,
-    Input
+    ModalFooter
 } from 'reactstrap';
 // import {Forms} from '../Forms';
 import { Login } from '../LoginModal/Login';
@@ -79,9 +75,9 @@ class RegisterModal extends Component {
                     <ModalHeader toggle={this.toggle}>MyVacTRACK Login</ModalHeader>
                     <ModalBody>
 
-                        <form>
+                        {/* <form>
 
-                        </form>
+                        </form> */}
                         <br />
                         <Button color="success" onClick={this.toggleNested}>Register</Button>
                         <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
