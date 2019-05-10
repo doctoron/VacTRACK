@@ -1,1 +1,1 @@
-export { default } from "./Authenticate";
+export { default } from "./PrivateRoute";

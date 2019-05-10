@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from '../LoginModal';
 import {
   Button,
   Collapse,
@@ -18,29 +17,32 @@ import {
 export default class MenuBar extends React.Component {
   constructor (props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
   }
-  toggle () {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
+  // toggle (e) {
+  //   e.preventDefault();
+  //   console.log('this was clicked');
+  //   this.setState({
+  //     isOpen: true
+  //   });
+  // }
   render () {
-    console.log(this.props)
+    console.log(this.state)
     return (
       <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">VacTRACK</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 {/* <Modal name="Denise"/> */}
-                <Modal />
+                <Button color="danger" onClick={this.props.toggle}>Login</Button> {' '}
+                { sessionStorage.getItem('authenticated') === 'true' ? 
+                  <Button color="success" onClick={this.toggleNested}  > MyVacTrack</Button> 
+                  : null
+                }
               </NavItem>
               <NavItem>
                 <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">
@@ -67,7 +69,6 @@ export default class MenuBar extends React.Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-          </Collapse>
         </Navbar>
       </div>
     );

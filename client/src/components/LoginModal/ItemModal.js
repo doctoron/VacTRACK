@@ -8,8 +8,8 @@ import {
     ModalHeader,
     ModalBody,
     ModalFooter
-} from 'reactstrap';
-// import {Forms} from '../Forms';
+}
+    from 'reactstrap';
 import { Login } from '../LoginModal/Login';
 import PropTypes from 'prop-types';
 
@@ -73,11 +73,6 @@ class RegisterModal extends Component {
                 <Button color="danger" onClick={this.toggle}>{this.props.Login}</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>MyVacTRACK Login</ModalHeader>
-                    <ModalBody>
-
-                        {/* <form>
-
-                        </form> */}
                         <br />
                         <Button color="success" onClick={this.toggleNested}>Register</Button>
                         <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
@@ -87,7 +82,7 @@ class RegisterModal extends Component {
                             </ModalBody>
                             <ModalFooter>
                                 <Button color="primary" onClick={this.toggleNested}>Done</Button>{' '}
-                                <Button color="secondary" onClick={this.toggleAll}>All Done</Button>
+                                <Button color="secondary" onClick={this.toggleAll}>Go Back</Button>
                             </ModalFooter>
                         </Modal>
                     </ModalBody>

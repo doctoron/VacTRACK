@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
+
 class Login extends Component {
     state = {
         email: '',
-        // username: '',
+        username: '',
         password: ''
     }
     handleChange = (event) => {
@@ -15,13 +16,14 @@ class Login extends Component {
         console.log("Login State:", this.setState);
     }
     handleSubmit = (event) => {
+        console.log('this was clicked');
         event.preventDefault();
         const registerData = {
             email: this.state.email,
             // username: this.state.username,
             password: this.state.password
         }
-        Axios.get('/api/members', registerData)
+        Axios.post('/members', registerData)
             .then(results => {
                 console.log('Attempted Login:', results);
             })
@@ -46,8 +48,9 @@ class Login extends Component {
             return <Redirect to="/Search" />
         }
         return (
-            <div className="modal show" tabindex="-1" role="dialog">
-                <form onSubmit={this.handleSubmit}>
+            <div className="modal show" tabIndex="-1" role="dialog">
+            Login Page
+                {/* <form onSubmit={this.handleSubmit}>
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -64,9 +67,9 @@ class Login extends Component {
                                 <button type="submit" className="btn btn-primary">Submit</button>
                                 <Link to="/" className="btn btn-secondary" data-dismiss="modal">Close</Link>
                             </div>
-                        </div>
-                    </div>
-                </form>
+                        </div> */}
+                    {/* </div>
+                </form> */}
             </div>
         )
     }

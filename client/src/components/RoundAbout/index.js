@@ -25,7 +25,7 @@ const items = [
   }
 ];
 
-class roundAbout extends Component {
+class RoundAbout extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
@@ -93,4 +93,4 @@ class roundAbout extends Component {
 }
 
 
-export default roundAbout;
+export default RoundAbout;

@@ -1,34 +1,32 @@
 const mongoose = require("mongoose");
-const db = require("../models");
-
-// This file empties the Books collection and inserts the books below
+const db = require("../models/User");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/members", { useNewUrlParser: true }
 );
 
-const memberSeed = [
+const userSeed = [
   {
-    username: "Ron.antonio@google.com",
+    username: "ron.antonio@google.com",
     passsword: "vaccinationswork",
     date: new Date(Date.now())
   },
   {
-    username: "Ivonne.Lawless@google.com",
+    username: "ivonne.Lawless@google.com",
     passsword: "vaccinationswork",
     date: new Date(Date.now())
   },
   {
-    username: "Craig.zimbler@google.com",
+    username: "craig.zimbler@google.com",
     passsword: "vaccinationswork",
     date: new Date(Date.now())
   }
 ];
 
-db.Members
+db.users
   .remove({})
-  .then(() => db.Members.collection.insertMany(memberSeed))
+  .then(() => db.users.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
