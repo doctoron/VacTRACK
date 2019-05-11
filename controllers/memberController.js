@@ -1,24 +1,26 @@
-const Member = require('../models/Members');
-// Defining methods for the membrerConroller
+const Members = require('../models/Members');
+// Defining methods for the memberController
 module.exports = {
-  findAll: (req, res) => {
-    Members
-      .find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findOne: (req, res) => {
-    Members
-      .find({username: req.body.email, password: req.body.password })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(400).json({ msg: "email/Password not found"}));
-  },
-  findById: (req, res) => {
-    Members
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  // findAll: (req, res) => {
+  //   Members
+  //     .find(req.query)
+  //     .sort({ date: -1 })
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
+  findUser: (req, res) => {
+    console.log('Direct body coming in', req.body);
+    Members.find({
+      email: req.body.email,
+      password: req.body.password
+    }).then((data) => {
+      console.log('This is what was returned', data);
+      if (!Array.isArray(data) || !data.length) {
+        return res.status(400).json({ msg: "You must be logged in to view this record" })
+      } else {
+        res.json(data);
+      }
+    });
   },
   findById: (req, res) => {
     Members

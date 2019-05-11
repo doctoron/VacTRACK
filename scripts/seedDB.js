@@ -24,19 +24,24 @@ const userSeed = [
   }
 ];
 
-console.log(userSeed)
+// console.log(userSeed)
 
-Users.deleteMany()
-.then(() => {
-  Users.insertMany(userSeed)
-  .then(data => {
-    console.log(data + " records inserted!");
-    process.exit(0);
+Users.collection.deleteMany()
+  .then(() => {
+    Users.collection.insertMany(userSeed)
+      .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });
   })
-})
 
 
-/*Users
+/*
+Users
   .deleteMany({})
   .then(() => Users.insertMany(userSeed))
   .then(data => {

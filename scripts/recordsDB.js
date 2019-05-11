@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models/members");
+const Members = require("../models/Members");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
@@ -76,7 +76,24 @@ const memberSeed = [
     }
 ];
 
-db
+// console.log(memberSeed)
+
+Members.collection.deleteMany()
+    .then(() => {
+        Members.collection.insertMany(memberSeed)
+            .then(data => {
+                console.log(data.result.n + " records inserted!");
+                process.exit(0);
+            })
+            .catch(err => {
+                console.error(err);
+                process.exit(1);
+            });
+    })
+
+
+
+/* db
     .remove({})
     .then(() => db.collection.insertMany(memberSeed))
     .then(data => {
@@ -86,4 +103,4 @@ db
     .catch(err => {
         console.error(err);
         process.exit(1);
-    });
+    }); */
