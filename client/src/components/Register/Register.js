@@ -3,12 +3,15 @@ import Axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
 import Pregnancy from './Pregnancy';
 import CD4 from './CD4';
+import VaccinePerAge from "./VaccinePerAge"
 // import App from '../../App';
 import moment from 'moment';
 
 //     This is the register component
 export default class Register extends React.Component {
-  state = {
+ constructor(props){
+   super(props)
+  this.state = {
     email: "",
     username: "",
     password: "",
@@ -24,8 +27,9 @@ export default class Register extends React.Component {
     healthCareWorker: false,
     conditions: false,
     otherFactors: false,
-    zoster: false
-  }
+    zoster: false,
+    hassubmitted:false
+  }}
   handleChange = (event) => {
     const { name, value } = event.target;
     // console.log('Gender onChange', value);
@@ -55,6 +59,8 @@ export default class Register extends React.Component {
       otherFactors: this.state.otherFactors,
       zoster: this.state.zoster
     }
+    this.setState({hassubmitted:true})
+    this.props.toggleNested()
     Axios.post('/api/members', registerData)
       .then(results => {
         console.log('Result:', results);
@@ -64,6 +70,7 @@ export default class Register extends React.Component {
   render () {
     console.log(this.state)
     return (
+      <React.Fragment>
       <Form>
         <FormGroup>
           <Label for="username">Username</Label>
@@ -285,6 +292,8 @@ export default class Register extends React.Component {
           <button onClick={this.handleSubmit}>Submit</button>
         </FormGroup>
       </Form >
+      {/* {this.state.hassubmitted ? <VaccinePerAge/> : ""} */}
+      </React.Fragment>
     )
   }
 }
