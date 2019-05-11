@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models/User");
+const Users = require("../models/Users");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
@@ -8,30 +8,42 @@ mongoose.connect(
 
 const userSeed = [
   {
-    username: "ron.antonio@google.com",
-    passsword: "vaccinationswork",
+    email: "ron.antonio@google.com",
+    password: "vaccineswork",
     date: new Date(Date.now())
   },
   {
-    username: "ivonne.Lawless@google.com",
-    passsword: "vaccinationswork",
+    email: "ivonne.lawless@google.com",
+    password: "vaccineswork",
     date: new Date(Date.now())
   },
   {
-    username: "craig.zimbler@google.com",
-    passsword: "vaccinationswork",
+    email: "craig.zimbler@google.com",
+    password: "vaccineswork",
     date: new Date(Date.now())
   }
 ];
 
-db.users
-  .remove({})
-  .then(() => db.users.collection.insertMany(userSeed))
+console.log(userSeed)
+
+Users.deleteMany()
+.then(() => {
+  Users.insertMany(userSeed)
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data + " records inserted!");
+    process.exit(0);
+  })
+})
+
+
+/*Users
+  .deleteMany({})
+  .then(() => Users.insertMany(userSeed))
+  .then(data => {
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
-  });
+  });*/

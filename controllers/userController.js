@@ -1,5 +1,5 @@
-const User = require('../models/user');
-// Defining methods for the booksController
+const Users = require('../models/Users');
+// Defining methods for the userController
 module.exports = {
     // findAll: (req, res) => {
     //     User
@@ -10,15 +10,19 @@ module.exports = {
     // },
     findUser: (req, res) => {
         console.log('Direct body coming in', req.body);
-        User.findOne({ email: req.body.email}, function (err, data) {
-            if (!data){
-                return res.status(400).json({ msg: "Email not found"})
+        Users.find({
+            email: req.body.email,
+            password: req.body.password
+        }).then((data) => {
+            console.log('This is what was returned', data);
+            if (!Array.isArray(data) || !data.length) {
+                return res.status(400).json({ msg: "Email/Password combination not found" })
+            } else {
+                res.json(data);
             }
-            
-            res.json(data);
         });
         // .then(data => {
-          
+
         //     )
         // .catch(err => res.status(400).json(err));
         // , function(err, user) {
@@ -30,7 +34,7 @@ module.exports = {
         // };
     },
     findById: (req, res) => {
-        User
+        Users
             .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
@@ -43,19 +47,19 @@ module.exports = {
     // },
     create: (req, res) => {
         console.log('rea.body', req.body);
-        User
+        Users
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => console.log(err));
     },
     update: (req, res) => {
-        User
+        Users
             .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     remove: (req, res) => {
-        User
+        Users
             .findById({ _id: req.params.id })
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))

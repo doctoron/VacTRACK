@@ -1,9 +1,11 @@
 const router = require("express").Router();
-const members = require("./members");
-const users = require ("./user");
+const Users = require ("./user");
+const Members = require("./members");
 
 // Member routes
-router.use("/members", members);
-router.use("/users", users);
+// api/users/myRoutes
+// api/members/routes
+router.use("/users", Users);
+router.use("/members", Members);
 
 module.exports = router;

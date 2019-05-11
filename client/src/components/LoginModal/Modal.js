@@ -25,9 +25,7 @@ class LoginModal extends React.Component {
       nestedModal: false,
       closeAll: false,
       username: "",
-      password: "",
-      authenticated: false
-    };
+      password: ""    };
 
     this.toggle = this.toggle.bind(this);
     this.toggleNested = this.toggleNested.bind(this);
@@ -75,11 +73,10 @@ class LoginModal extends React.Component {
               </FormGroup>
             </Form>
             <br />
-           
-            </ModalBody>
-            </Modal>
+          </ModalBody>
+        </Modal>
       </div>
-       
+
     );
   }
 }

@@ -4,17 +4,17 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
+  Redirect
 } from "react-router-dom";
-import NavBar from './components/MenuBar';
-import FluidJumbo from './components/FluidJumbo'
-import RoundAbout from './components/RoundAbout'
-import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import PrivateRoute from './components/Auth/PrivateRoute';
 import PVRec from './Pages/PVRec';
-import Login from './components/Login';
+import Login from './components/LoginModal/Login';
 import MenuBar from './components/MenuBar';
+
+import FluidJumbo from './components/FluidJumbo'
+import RoundAbout from './components/RoundAbout'
+import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
 
 import './App.css';
 
@@ -22,17 +22,26 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      authenticated: false
     }
+    this.connectToServer = this.connectToServer.bind(this);
     this.toggle = this.toggle.bind(this);
-
   }
+connectToServer() {
+  fetch('/login');
+}
+
+componentDidMount() {  
+this.connectToServer();
+}
 
   toggle (e) {
     e.preventDefault();
     console.log('this was clicked');
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
+      authenticated: !this.state.authenticated
     });
   }
 
@@ -44,7 +53,7 @@ class App extends Component {
             <MenuBar toggle={this.toggle} />
             <Switch>
               {/* <Route exact path="/public" component={App} /> */}
-              <Route exact path="/login" component={() => <Login showModal={this.state.isOpen} toggle={this.toggle} />} />
+              <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} />
               <PrivateRoute path="/pvr" component={PVRec} />
             </Switch>
             {/* <AuthButton /> */}
