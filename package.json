@@ -1,8 +1,33 @@
 {
-  "name": "mern",
-  "version": "1.0.0",
+  "name": "vacktrack",
+  "version": "0.2.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "moment": "^2.24.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.5.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+<<<<<<< HEAD
+    "react-scripts": "^3.0.0",
+    "reactstrap": "^8.0.0"
+=======
+    "react-multistep": "^3.6.4",
+    "react-scripts": "^3.0.0",
+    "react-stepzilla": "^6.0.0"
+>>>>>>> e5f26c927ea47a4b5f021550f77373297cd859f6
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -18,17 +43,5 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
-  },
-  "dependencies": {
-    "axios": "^0.18.0",
-    "bootstrap": "^4.3.1",
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
-    "mongo": "^0.1.0",
-    "mongoose": "^5.5.5",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "reactstrap": "^8.0.0"
   }
 }

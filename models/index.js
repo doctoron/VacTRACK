@@ -1,3 +1,3 @@
-module.exports = {
-  Members: require("./members")
-};
+// module.exports = {
+//   Member: require("./members")
+// };
