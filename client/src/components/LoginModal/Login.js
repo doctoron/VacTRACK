@@ -21,7 +21,9 @@ export default class Login extends Component {
       nestedModal: false,
       closeAll: false,
       email: "",
+      // username: "",
       password: "",
+      // showBtn: true,
       authenticated: false
     };
 
@@ -65,7 +67,9 @@ export default class Login extends Component {
       password: this.state.password
       // username: this.state.username
     }
-    Axios.get('/api/users/', registerData)
+    console.log('Captured login data', registerData);
+    
+    Axios.get('/api/Users', registerData)
       .then(results => {
         console.log('Attempted Login:', results);
         sessionStorage.setItem('authenticated', true);

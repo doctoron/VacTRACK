@@ -1,13 +1,6 @@
 const Users = require('../models/Users');
 // Defining methods for the userController
 module.exports = {
-    // findAll: (req, res) => {
-    //     User
-    //         .find(req.query)
-    //         .sort({ date: -1 })
-    //         .then(dbModel => res.json(dbModel))
-    //         .catch(err => res.status(422).json(err));
-    // },
     findUser: (req, res) => {
         console.log('Direct body coming in', req.body);
         Users.find({
@@ -16,7 +9,7 @@ module.exports = {
         }).then((data) => {
             console.log('This is what was returned', data);
             if (!Array.isArray(data) || !data.length) {
-                return res.status(400).json({ msg: "Email/Password combination not found" })
+                return res.status(422).json({ msg: "Email/Password combination not found" })
             } else {
                 res.json(data);
             }

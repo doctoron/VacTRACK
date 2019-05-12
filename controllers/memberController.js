@@ -1,13 +1,6 @@
 const Members = require('../models/Members');
 // Defining methods for the memberController
 module.exports = {
-  // findAll: (req, res) => {
-  //   Members
-  //     .find(req.query)
-  //     .sort({ date: -1 })
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
   findUser: (req, res) => {
     console.log('Direct body coming in', req.body);
     Members.find({
