@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
+import image1 from '../../img/jump.jpg'
 
 const Cards = (props) => {
   return (
@@ -19,11 +20,28 @@ const Cards = (props) => {
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
         <Button color="secondary">Button</Button>
       </Card> */}
-      <Card body inverse color="info">
-        <CardTitle>Special Title Treatment</CardTitle>
+      
+      
+      
+      {/* <Card body inverse color="info"> */}
+        {/* <CardTitle>Special Title Treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
         <Button color="secondary">Button</Button>
+      </Card> */}
+
+      <Card>
+        <CardImg top width="100%" src={image1} alt="Card image cap" />
+        <CardBody>
+          <CardTitle>Card Title</CardTitle>
+          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+          <CardText>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </CardText>
+        </CardBody>
       </Card>
+      
+      
+      
       {/* <Card body inverse color="warning">
         <CardTitle>Special Title Treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
