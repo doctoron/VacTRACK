@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "mern",
   "version": "0.1.0",
   "private": true,
@@ -9,13 +10,31 @@
     "react-scripts": "^2.1.1",
     "react-router-dom": "^4.3.1",
     "axios": "^0.18.0"
+=======
+  "name": "vactrack",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8"
+>>>>>>> e5f26c927ea47a4b5f021550f77373297cd859f6
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+<<<<<<< HEAD
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+=======
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+>>>>>>> e5f26c927ea47a4b5f021550f77373297cd859f6
   "browserslist": [
     ">0.2%",
     "not dead",
