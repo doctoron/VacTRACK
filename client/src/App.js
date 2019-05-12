@@ -21,7 +21,7 @@ class App extends Component {
 
   getUserInfo () {
     this.setState({
-      name: "",
+      username: "",
       password: ""
     });
   }

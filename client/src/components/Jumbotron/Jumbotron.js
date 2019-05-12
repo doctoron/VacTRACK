@@ -17,4 +17,11 @@ const Jumbo = (props) => {
   );
 };
 
+Jumbotron.propTypes = {
+  // Pass in a Component to override default element
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  fluid: PropTypes.bool,
+  className: PropTypes.string
+};
+
 export default Jumbo;
