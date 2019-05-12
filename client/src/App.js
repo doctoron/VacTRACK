@@ -11,9 +11,8 @@ import PrivateRoute from './components/Auth/PrivateRoute';
 import PVRec from './Pages/PVRec';
 import Login from './components/LoginModal/Login';
 import MenuBar from './components/MenuBar';
-
-import FluidJumbo from './components/FluidJumbo'
-import RoundAbout from './components/RoundAbout'
+import FluidJumbo from './components/FluidJumbo';
+import RoundAbout from './components/RoundAbout';
 import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
 
 import './App.css';
@@ -50,10 +49,12 @@ this.connectToServer();
       <div className="App">
         <Router>
           <div>
-            <MenuBar toggle={this.toggle} />
+            <MenuBar />
+            {/* <MenuBar toggle={this.toggle} /> */}
             <Switch>
               {/* <Route exact path="/public" component={App} /> */}
-              <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} />
+              <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} />} />
+              {/* <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} /> */}
               <PrivateRoute path="/pvr" component={PVRec} />
             </Switch>
             {/* <AuthButton /> */}

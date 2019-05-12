@@ -17,6 +17,7 @@ const memberSeed = [
         travelling: "false",
         immunity: "false",
         hiv: "false",
+        cd4: "null",
         dormitory: "false",
         healthCareWorker: "true",
         conditions: "false",
