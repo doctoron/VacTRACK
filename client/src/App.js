@@ -4,16 +4,17 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  // Redirect
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import PrivateRoute from './components/Auth/PrivateRoute';
 import PVRec from './Pages/PVRec';
 import Login from './components/LoginModal/Login';
 import MenuBar from './components/MenuBar';
-import FluidJumbo from './components/FluidJumbo';
-import RoundAbout from './components/RoundAbout';
-import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
+import Home from './Pages/Home';
+// import FluidJumbo from './components/FluidJumbo';
+// import RoundAbout from './components/RoundAbout';
+// import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
 
 import './App.css';
 
@@ -22,18 +23,19 @@ class App extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      authenticated: false
+      authenticated: false,
+      username: ''
     }
     this.connectToServer = this.connectToServer.bind(this);
     this.toggle = this.toggle.bind(this);
   }
-connectToServer() {
-  fetch('/login');
-}
+  connectToServer () {
+    fetch('/login');
+  }
 
-componentDidMount() {  
-this.connectToServer();
-}
+  componentDidMount () {
+    this.connectToServer();
+  }
 
   toggle (e) {
     e.preventDefault();
@@ -49,15 +51,25 @@ this.connectToServer();
       <div className="App">
         <Router>
           <div>
-            <MenuBar />
-            {/* <MenuBar toggle={this.toggle} /> */}
+            <MenuBar toggle={this.toggle} />
             <Switch>
-              {/* <Route exact path="/public" component={App} /> */}
-              <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} />} />
-              {/* <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} /> */}
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} />
               <PrivateRoute path="/pvr" component={PVRec} />
             </Switch>
             {/* <AuthButton /> */}
+
+            {/* <header className="App-header">
+              <NavBar name={this.state.name} />
+            </header>
+            <Jumbotron>
+            <RoundAbout />
+              <h3>#vaccineswork</h3>
+            </Jumbotron>
+            <br />
+            <h2>Health Science News Below:</h2>
+            <FluidJumbo /> */}
+
             {/* <ul>
           <li>
             <Link to="/public">Public Page With All Links to Newsfeeds, CDC and WHO will be active</Link>
@@ -69,16 +81,6 @@ this.connectToServer();
 
           </div>
         </Router>
-        {/* <header className="App-header">
-          <NavBar name={this.state.name} />
-        </header>
-        <Jumbotron>
-        <RoundAbout />
-          <h3>#vaccineswork</h3>
-        </Jumbotron>
-        <br />
-        <h2>Health Science News Below:</h2>
-        <FluidJumbo /> */}
 
       </div>
     );

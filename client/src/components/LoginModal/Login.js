@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import RoundAbout from '../RoundAbout';
-import { Button, Form, Label, FormGroup, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { 
+  Button, 
+  Form, 
+  Label, 
+  FormGroup, 
+  Input, 
+  Modal, 
+  ModalHeader, 
+  ModalBody, 
+  ModalFooter
+} from 'reactstrap';
 
 export default class Login extends Component {
   constructor (props) {
@@ -11,9 +21,7 @@ export default class Login extends Component {
       nestedModal: false,
       closeAll: false,
       email: "",
-      // username: "",
       password: "",
-      // showBtn: true,
       authenticated: false
     };
 
@@ -57,7 +65,7 @@ export default class Login extends Component {
       password: this.state.password
       // username: this.state.username
     }
-    Axios.post('/api/Users', registerData)
+    Axios.get('/api/users/', registerData)
       .then(results => {
         console.log('Attempted Login:', results);
         sessionStorage.setItem('authenticated', true);
@@ -65,6 +73,7 @@ export default class Login extends Component {
       .catch(error => {
         console.log(error.response);
         alert('Email and password combination not found.');
+        this.toggleAll();
       })
   }
 

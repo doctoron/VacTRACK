@@ -29,7 +29,7 @@ class MenuBar extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  logOut(e) {
+  logOut (e) {
     e.preventDefault();
     sessionStorage.removeItem('authenticated');
     this.props.history.push('/login');
@@ -45,10 +45,14 @@ class MenuBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Nav className="ml-auto" navbar>
             <NavItem>
-            { !sessionStorage.getItem('authenticated') ?
-                <Button color="danger" onClick={this.props.toggle}> Login</Button> :
+              {!sessionStorage.getItem('authenticated')
+                ?
+                <Button color="danger" onClick={this.props.toggle}> Login</Button>
+                :
                 <Button color="danger" onClick={this.logOut}> Logout</Button>} {' '}
-              {sessionStorage.getItem('authenticated') ?
+                
+              {sessionStorage.getItem('authenticated')
+                ?
                 <Button color="success" onClick={this.toggleNested}> MyVacTrack</Button>
                 : null
               }
