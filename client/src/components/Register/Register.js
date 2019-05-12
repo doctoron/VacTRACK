@@ -1,6 +1,17 @@
 import React from 'react';
 import Axios from 'axios';
-import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Card } from 'reactstrap';
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText,
+  ListGroup,
+  ListGroupItem,
+  Card
+}
+  from 'reactstrap';
 import Pregnancy from './Pregnancy';
 import CD4 from './CD4';
 // import App from '../../App';
@@ -77,17 +88,18 @@ export default class Register extends React.Component {
           <Label for="password">Password</Label>
           <Input type="password" name="password" id="password" placeholder="Make a Strong Password" onChange={this.handleChange} />
         </FormGroup>
-       
+
 
         <FormGroup tag="fieldset" row>
           {/* <Card body inverese color="success">Adult Vaccine Assessment Tool</Card> */}
           {/* <legend className="col-form-label col-sm-2"><h5>Adult Vaccine Assessment Tool</h5></legend> */}
           <Card body inverse color="primary">
-            <FormText color="muted">
+            {/* <FormText color="has-success"> */}
+            <FormText>
               <ListGroup>
-                <ListGroupItem>A. Answer the questions below</ListGroupItem>
-                <ListGroupItem>B. Get a list of vaccines you may need based on your answers.  (This list may include vaccines you've already had).</ListGroupItem>
-                <ListGroupItem>C. Discuss the list with your doctor or health care professional.</ListGroupItem>
+                <ListGroupItem><strong>A. Answer the questions below</strong></ListGroupItem>
+                <ListGroupItem><strong>B. Get a list of vaccines you may need based on your answers.<br /> (This list may include vaccines you've already had).</strong></ListGroupItem>
+                <ListGroupItem><strong>C. Discuss the list with your doctor or health care professional.</strong></ListGroupItem>
               </ListGroup>
             </FormText>
           </Card>
@@ -171,7 +183,7 @@ export default class Register extends React.Component {
             No
             </Label>
         </FormGroup>
-        {this.state.hiv === "true" ? <CD4 handleChange={this.handleChange}/> : null}
+        {this.state.hiv === "true" ? <CD4 handleChange={this.handleChange} /> : null}
         <FormText>
           <br />
           <h5>6. Are you a first-year college student who lives in a college dormitory or a new military recruit?</h5>
@@ -222,7 +234,7 @@ export default class Register extends React.Component {
             </Label>
         </FormGroup>
         <FormText>
-          <ul>
+          <ul className="condition-list">
             <li>Heart disease (for example, congestive heart failure)</li>
             <li>Diabetes mellitus type 1 or 2 (also called "sugar diabetes")</li>
             <li>Chronic lung disease (for example, Asthma and Chronic Obstructive Pulmonary Disease [COPD])?</li>
@@ -234,7 +246,7 @@ export default class Register extends React.Component {
           </ul>
         </FormText>
 
-        <h5>9. Review the items listed below:</h5>
+        <h5>9. Review the items listed below and indicate if ANY apply:</h5>
         <FormGroup check>
           <Label check>
             <Input type="radio" name="otherFactors" value="true" onChange={this.handleChange} />{' '}
@@ -248,7 +260,7 @@ export default class Register extends React.Component {
             </Label>
         </FormGroup>
         <FormText>
-          <ul>
+          <ul className="condition-list">
             <li>Alcoholism</li>
             <li>Smoke cigarettes</li>
             <li>Man who has sex with men</li>
@@ -281,8 +293,7 @@ export default class Register extends React.Component {
         <br />
         <FormGroup>
           {/* <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5> */}
-          {/* <Button>My Results</Button> */}
-          <button onClick={this.handleSubmit}>Submit</button>
+          <Button onClick={this.handleSubmit}>My Results</Button>
         </FormGroup>
       </Form >
     )

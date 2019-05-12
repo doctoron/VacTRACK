@@ -1,39 +1,54 @@
 const mongoose = require("mongoose");
-const db = require("../models");
-
-// This file empties the Books collection and inserts the books below
+const Users = require("../models/Users");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/members", { useNewUrlParser: true }
 );
 
-const memberSeed = [
+const userSeed = [
   {
-    username: "Ron.antonio@google.com",
-    passsword: "vaccinationswork",
+    email: "ron.antonio@google.com",
+    password: "vaccineswork",
     date: new Date(Date.now())
   },
   {
-    username: "Ivonne.Lawless@google.com",
-    passsword: "vaccinationswork",
+    email: "ivonne.lawless@google.com",
+    password: "vaccineswork",
     date: new Date(Date.now())
   },
   {
-    username: "Craig.zimbler@google.com",
-    passsword: "vaccinationswork",
+    email: "craig.zimbler@google.com",
+    password: "vaccineswork",
     date: new Date(Date.now())
   }
 ];
 
-db.Members
-  .remove({})
-  .then(() => db.Members.collection.insertMany(memberSeed))
+// console.log(userSeed)
+
+Users.collection.deleteMany()
+  .then(() => {
+    Users.collection.insertMany(userSeed)
+      .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });
+  })
+
+
+/*
+Users
+  .deleteMany({})
+  .then(() => Users.insertMany(userSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
-  });
+  });*/

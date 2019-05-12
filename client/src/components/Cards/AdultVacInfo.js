@@ -5,8 +5,8 @@ const AdultVacInfo = (props) => {
   return (
     <div>
     <Card body inverse color="primary">
-        <CardTitle>Special Title Treatment</CardTitle>
-        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <CardTitle>CDC News on Vaccinations </CardTitle>
+        <CardText>Current Information on Vaccinations from the CDC</CardText>
         <Button color="secondary">Button</Button>
     </Card>
       </div>
