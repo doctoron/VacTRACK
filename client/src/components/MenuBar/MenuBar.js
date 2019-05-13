@@ -12,18 +12,17 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
+  DropdownItem
 } from 'reactstrap';
 
 class MenuBar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isOpen: false,
+      isOpen: false
     };
   }
   toggle (e) {
-    e.preventDefault();
     console.log('this was clicked');
     this.setState({
       isOpen: !this.state.isOpen
@@ -32,9 +31,18 @@ class MenuBar extends React.Component {
   logOut (e) {
     e.preventDefault();
     sessionStorage.removeItem('authenticated');
-    this.props.history.push('/login');
+    
+    // this.setState=({
+    //   isOpen: !this.state.isOpen
+    // })
+    // How do I return to the login to start over here?
+    // this.props.toggle();
+    this.props.history.push('/');
   }
-
+  // logIn (e) {
+  //   e.preventDefault();
+  //   this.props.toggle();
+  // }
 
   render () {
     console.log(this.state)
@@ -50,7 +58,7 @@ class MenuBar extends React.Component {
                 <Button color="danger" onClick={this.props.toggle}> Login</Button>
                 :
                 <Button color="danger" onClick={this.logOut}> Logout</Button>} {' '}
-                
+
               {sessionStorage.getItem('authenticated')
                 ?
                 <Button color="success" onClick={this.toggleNested}> MyVacTrack</Button>
