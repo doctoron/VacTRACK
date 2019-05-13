@@ -20,11 +20,10 @@ export default class Login extends Component {
     this.state = {
       modal: false,
       nestedModal: false,
-      closeAll: false,
       email: "",
-      // username: "",
       password: "",
-      // showBtn: true,
+      username: "",
+      closeAll: false,
       authenticated: false
     };
 
@@ -91,8 +90,8 @@ export default class Login extends Component {
             <ModalBody>
               <Form>
                 <FormGroup>
-                  <Label for="Email">e-mail</Label>
-                  <Input type="email" name="email" id="eEmail" placeholder="e-mail address" onChange={this.handleChange} />
+                  <Label for="Email">email</Label>
+                  <Input type="email" name="email" id="eEmail" placeholder="email address" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                   <Label for="password">Password</Label>

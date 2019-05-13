@@ -16,7 +16,7 @@ const items = [
     src:  image1,
     altText: 'Immunization Puzzle',
     caption:  'Comprehensive, One-Stop Vaccination Tracker',
-    captionText: '#vaccineswork'
+    captionText: ''
   },
   {
     src: image2,
@@ -29,7 +29,7 @@ const items = [
     src: image3,
     altText: 'Slide 3',
     caption: 'Want a reason to celebrate... Vaccinate!',
-    // captionText: '#vaccineswork'
+    captionText: ''
 
   }
 ];
@@ -87,7 +87,7 @@ class roundAbout extends Component {
           <img src={item.src} alt={item.altText} />
           <CarouselCaption
             // className="text-danger"
-            className="carousel-caption h4 a"
+            className="carousel-caption h3"
             captionText={item.captionText}
             captionHeader={item.caption}
           />
@@ -107,10 +107,6 @@ class roundAbout extends Component {
               .carousel-caption h3 {
                 color: #20c997;
                 text-shadow: 2px 2px black;
-              }
-              p {
-                color: #red;
-                text-shaddow: 2px 2px black;
               }
               `
           }
