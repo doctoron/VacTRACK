@@ -69,7 +69,7 @@ export default class Login extends Component {
     }
     console.log('Captured login data', registerData);
     
-    Axios.get('/api/Users', registerData)
+    Axios.put('/api/Users/', registerData)
       .then(results => {
         console.log('Attempted Login:', results);
         sessionStorage.setItem('authenticated', true);
