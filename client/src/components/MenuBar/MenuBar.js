@@ -24,7 +24,7 @@ class MenuBar extends React.Component {
   }
   toggle (e) {
     console.log('this was clicked');
-    this.setState({
+      this.props.setState({
       isOpen: !this.state.isOpen
     });
   }
