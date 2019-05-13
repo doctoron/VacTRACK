@@ -8,24 +8,29 @@ import {
 } from 'reactstrap';
 
 import image1 from "../../img/puzzle1.jpg"; // Tell Webpack this JS file uses this image
-import image2 from '../../img/VT-Logo.jpg';
+import image2 from '../../img/roundAbout-Logo.jpg';
 import image3 from '../../img/adult-celebrate.jpg';
 
 const items = [
   {
     src:  image1,
     altText: 'Immunization Puzzle',
-    caption: 'Missing Vaccinations?'
+    caption:  'Comprehensive, One-Stop Vaccination Tracker',
+    captionText: '#vaccineswork'
   },
   {
     src: image2,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    altText: '#vaccineswork',
+    caption: 'Tips, Tools And Resources For Vaccinations As An Adult',
+    captionText: '#vaccineswork'
+
   },
   {
     src: image3,
     altText: 'Slide 3',
-    caption: 'Slide 3'
+    caption: 'Want a reason to celebrate... Vaccinate!',
+    // captionText: '#vaccineswork'
+
   }
 ];
 
@@ -81,8 +86,9 @@ class roundAbout extends Component {
         >
           <img src={item.src} alt={item.altText} />
           <CarouselCaption
-            className="text-danger"
-            captionText={item.caption}
+            // className="text-danger"
+            className="carousel-caption h4 a"
+            captionText={item.captionText}
             captionHeader={item.caption}
           />
         </CarouselItem>
@@ -97,7 +103,16 @@ class roundAbout extends Component {
                 max-width: 100%;
                 height: 500px;
                 background: black;
-              }`
+              }
+              .carousel-caption h3 {
+                color: #20c997;
+                text-shadow: 2px 2px black;
+              }
+              p {
+                color: #red;
+                text-shaddow: 2px 2px black;
+              }
+              `
           }
         </style>
         <Carousel
