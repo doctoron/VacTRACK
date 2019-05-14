@@ -1,3 +1,6 @@
 .NavLink {
     color: #ffffff
 }
+.carousel-item > img { 
+    width: 100%; 
+  }
