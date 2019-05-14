@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import RoundAbout from '../RoundAbout';
+import RoundAbout from '../RoundAbout/RoundAbout';
 import Register from  '../Register'
 import {
   Button,

@@ -79,7 +79,6 @@ class MenuBar extends React.Component {
               <DropdownMenu right>
                 <DropdownItem>
                   <NavLink href="http://www2.cdc.gov/nip/adultimmsched/" target= "_blank">Adult Immunization Assessment Tool</NavLink>
-                  {/* <NavLink href="../../Pages/CDC.js">Adult Immunization Assessment Tool</NavLink> */}
                 </DropdownItem>
                 <DropdownItem>
                   <NavLink href="http://apps.who.int/worldimmunizationweek/" target= "_blank">Test Your Vaccination Knowledge</NavLink>

@@ -54,10 +54,10 @@ class App extends Component {
           <div>
             <MenuBar toggle={this.toggle} />
             <Switch>
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} />
               <Route path="/register" component={Register} />
-              <PrivateRoute path="/pvr" component={PVRec} />
+              <PrivateRoute path="/private" component={PVRec} />
             </Switch>
             {/* <AuthButton /> */}
 

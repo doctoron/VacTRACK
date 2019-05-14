@@ -1,9 +1,12 @@
-import React, {Component} from 'React'
+import React from 'react';
 
-const CDCAssessment=() =>{
-    return (
-<NavLink href="https://www2.cdc.gov/nip/adultimmsched/" />
-    );
+const CDC = () => {
+  return(
+
+< div >
+    <h3>Vaccination information from the CDC</h3>
+</div >
+  );
 
 }
-export default CDCAssessment;
+export default CDC;
