@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../../Pages/Home';
+// import Home from '../../Pages/Home';
 import { withRouter } from 'react-router-dom';
 import {
   Button,
@@ -66,11 +66,11 @@ class MenuBar extends React.Component {
               }
             </NavItem>
             <NavItem>
-              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">
+              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="_blank">
                 World Immunization Week </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">  </NavLink>
+              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="_blank">  </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -78,10 +78,11 @@ class MenuBar extends React.Component {
                 </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Immunization Assessment Tool</NavLink>
+                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/" target= "_blank">Adult Immunization Assessment Tool</NavLink>
+                  {/* <NavLink href="../../Pages/CDC.js">Adult Immunization Assessment Tool</NavLink> */}
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink href="http://apps.who.int/worldimmunizationweek/">Test Your Vaccination Knowledge</NavLink>
+                  <NavLink href="http://apps.who.int/worldimmunizationweek/" target= "_blank">Test Your Vaccination Knowledge</NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
