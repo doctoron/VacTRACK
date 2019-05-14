@@ -12,6 +12,7 @@ import PVRec from './Pages/PVRec';
 import Login from './components/LoginModal/Login';
 import MenuBar from './components/MenuBar';
 import Home from './Pages/Home';
+import Register from './components/Register'
 // import FluidJumbo from './components/FluidJumbo';
 // import RoundAbout from './components/RoundAbout';
 // import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
@@ -53,9 +54,10 @@ class App extends Component {
           <div>
             <MenuBar toggle={this.toggle} />
             <Switch>
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} />
-              <PrivateRoute path="/pvr" component={PVRec} />
+              <Route path="/register" component={Register} />
+              <PrivateRoute path="/private" component={PVRec} />
             </Switch>
             {/* <AuthButton /> */}
 

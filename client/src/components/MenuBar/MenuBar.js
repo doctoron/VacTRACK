@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../../Pages/Home';
+// import Home from '../../Pages/Home';
 import { withRouter } from 'react-router-dom';
 import {
   Button,
@@ -12,29 +12,37 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
+  DropdownItem
 } from 'reactstrap';
 
 class MenuBar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isOpen: false,
+      isOpen: false
     };
   }
   toggle (e) {
-    e.preventDefault();
     console.log('this was clicked');
-    this.setState({
+      this.props.setState({
       isOpen: !this.state.isOpen
     });
   }
   logOut (e) {
     e.preventDefault();
     sessionStorage.removeItem('authenticated');
-    this.props.history.push('/login');
+    
+    // this.setState=({
+    //   isOpen: !this.state.isOpen
+    // })
+    // How do I return to the login to start over here?
+    // this.props.toggle();
+    this.props.history.push('/');
   }
-
+  // logIn (e) {
+  //   e.preventDefault();
+  //   this.props.toggle();
+  // }
 
   render () {
     console.log(this.state)
@@ -50,7 +58,7 @@ class MenuBar extends React.Component {
                 <Button color="danger" onClick={this.props.toggle}> Login</Button>
                 :
                 <Button color="danger" onClick={this.logOut}> Logout</Button>} {' '}
-                
+
               {sessionStorage.getItem('authenticated')
                 ?
                 <Button color="success" onClick={this.toggleNested}> MyVacTrack</Button>
@@ -58,11 +66,11 @@ class MenuBar extends React.Component {
               }
             </NavItem>
             <NavItem>
-              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">
+              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="_blank">
                 World Immunization Week </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/">  </NavLink>
+              <NavLink href="https://www.who.int/campaigns/immunization-week/2018/en/" target="_blank">  </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -70,10 +78,10 @@ class MenuBar extends React.Component {
                 </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/">Adult Immunization Assessment Tool</NavLink>
+                  <NavLink href="http://www2.cdc.gov/nip/adultimmsched/" target= "_blank">Adult Immunization Assessment Tool</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink href="http://apps.who.int/worldimmunizationweek/">Test Your Vaccination Knowledge</NavLink>
+                  <NavLink href="http://apps.who.int/worldimmunizationweek/" target= "_blank">Test Your Vaccination Knowledge</NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>

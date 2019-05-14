@@ -3,8 +3,8 @@ const Users = require("../../controllers/userController");
 
 // api/users/
 router.route("/")
-.post(Users.create)
-.get(Users.findUser);
+.get(Users.create)
+.put(Users.findUser);
 //   .post(users.create)
 
 // Matches with "/api/users/:id"
