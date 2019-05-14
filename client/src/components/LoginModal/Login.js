@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom"
 import Axios from 'axios';
 import RoundAbout from '../RoundAbout/RoundAbout';
 import Register from  '../Register'
@@ -18,13 +19,14 @@ export default class Login extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      modal: false,
+      modal: this.props.showModal,
       nestedModal: false,
       email: "",
       password: "",
       username: "",
       closeAll: false,
-      authenticated: false
+      authenticated: false,
+      redirect: false
     };
 
     this.toggleNested = this.toggleNested.bind(this);
@@ -40,9 +42,9 @@ export default class Login extends Component {
   }
 
   toggle () {
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   toggleNested () {
@@ -71,6 +73,7 @@ export default class Login extends Component {
 
     Axios.put('/api/Users/', registerData)
       .then(results => {
+        this.toggle()
         console.log('Attempted Login:', results);
         sessionStorage.setItem('authenticated', true);
       })
@@ -80,12 +83,24 @@ export default class Login extends Component {
 
       })
   }
+
+  setRedirect = ()=> {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = ()=> {
+    if(this.state.redirect){
+      return <Redirect to="/register" />
+    }
+  }
   render () {
     console.log('Login Modal as props', this.props.showModal);
     return (
       <div>
         {this.props.showModal &&
-          <Modal isOpen={this.props.showModal} className={this.props.className}>
+          <Modal isOpen={this.state.modal} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>MyVacTRACK-2 Login</ModalHeader>
             <ModalBody>
               <Form>
@@ -103,7 +118,8 @@ export default class Login extends Component {
             </ModalBody>
             <ModalFooter>
               <p><b>Not Yet Registered?</b></p>
-              <Button color="success" onClick={this.toggleNested}> Get Started </Button> {' '}
+              {this.renderRedirect()}
+              <Button color="success" onClick={this.setRedirect}> Get Started </Button> {' '}
         {/* How do I get my registration form to link here? */}
               {console.log('Getting Started Button', this.toggleNested)}
               <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
