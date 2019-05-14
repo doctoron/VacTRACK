@@ -44,6 +44,10 @@ class App extends Component {
     this.setState({
       isOpen: !this.state.isOpen,
       authenticated: !this.state.authenticated
+    }, ()=> {
+      if(!this.state.authenticated){
+        sessionStorage.removeItem('authenticated');
+      }
     });
   }
 
@@ -52,7 +56,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <MenuBar toggle={this.toggle} />
+            <MenuBar auth={this.state.authenticated} toggle={this.toggle} />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={() => <Login history={this.props.history} showModal={this.state.isOpen} toggle={this.toggle} />} />

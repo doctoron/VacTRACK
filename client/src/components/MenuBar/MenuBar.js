@@ -22,22 +22,24 @@ class MenuBar extends React.Component {
       isOpen: false
     };
   }
-  toggle (e) {
-    console.log('this was clicked');
-      this.props.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
+  // toggle (e) {
+  //   console.log('this was clicked');
+  //     this.setState({
+  //     isOpen: !this.state.isOpen
+  //   });
+  // }
   logOut (e) {
     e.preventDefault();
     sessionStorage.removeItem('authenticated');
+    console.log(this.props)
+    //this.props.toggle()
     
     // this.setState=({
     //   isOpen: !this.state.isOpen
     // })
     // How do I return to the login to start over here?
     // this.props.toggle();
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
   // logIn (e) {
   //   e.preventDefault();
@@ -45,7 +47,7 @@ class MenuBar extends React.Component {
   // }
 
   render () {
-    console.log(this.state)
+   //console.log(this.props)
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -53,13 +55,13 @@ class MenuBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Nav className="ml-auto" navbar>
             <NavItem>
-              {!sessionStorage.getItem('authenticated')
+              {this.props.auth
                 ?
-                <Button color="danger" onClick={this.props.toggle}> Login</Button>
+                <Button color="danger" onClick={this.props.toggle}> Logout</Button>
                 :
-                <Button color="danger" onClick={this.logOut}> Logout</Button>} {' '}
+                <Button color="danger" onClick={this.props.toggle}> Login</Button>}{" "}
 
-              {sessionStorage.getItem('authenticated')
+              {this.props.auth
                 ?
                 <Button color="success" onClick={this.toggleNested}> MyVacTrack</Button>
                 : null
