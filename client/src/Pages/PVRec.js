@@ -1,23 +1,49 @@
 import React from 'react';
 import vaccines from '../constants/vaccines';
+import moment from 'moment';
 
-const PVRec = (props) => {
+const testUsers = [{
+    id: "5cdbe797fc13ae5f39000000",
+    email: "mhassel@test.com",
+    username: "mhassel",
+    dob: "01/30/1959",
+    gender: "female",
+    pregnancy: true,
+    travelling: false,
+    immunity: true,
+    hiv: true,
+    cd4below200: false,
+    dormitory: false,
+    healthCareWorker: true,
+    conditons: true,
+    otherFactors: false,
+    zoster: false
+}];
 
-    for (let i = 0; i < vaccines.length; i++) {
-        if(vaccines[i].hiv === true){
-            giveVaccine();
-        }
-        
-        if(vaccines[i].date >= 50){
-
-        } else if(vaccines[i].date <= 50){
-
-        }
-        
-    }
-
-        return (
-            <div>Your Personal Vaccination Record</div>
+const calcAge = (dob) => {
+    console.log(testUsers[0].dob)
+    const age = moment().diff(testUsers[0].dob, 'years');
+    if(age < 19) { 
+        return(
+        alert(`This person is ${age} and must be 19 years or older to use VacTRACK.`)
         )
     }
+    return age;  
+}
+
+const PVRec = (testUsers) => {
+    // Process the record
+    const age = calcAge(testUsers.dob);
+    console.log(`This person is ${age} years old.`);
+    // const vaccinesList = neededVaccines.filter(vaccine => vaccine.age > 50);
+    const neededVaccines = vaccines.filter(vaccine => vaccine.needed);
+    const vaccinesList = neededVaccines.map(vaccine => <li>vaccine.name</li>);
+    return (
+        <div>Your Personal Vaccination Record
+            <ul>
+                <li>{vaccinesList}</li>
+            </ul>
+        </div>
+    )
+}
 export default PVRec;

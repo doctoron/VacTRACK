@@ -25,7 +25,8 @@ class App extends Component {
     this.state = {
       isOpen: false,
       authenticated: false,
-      username: ''
+      private: false,
+      redirect: false
     }
     this.connectToServer = this.connectToServer.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -44,8 +45,8 @@ class App extends Component {
     this.setState({
       isOpen: !this.state.isOpen,
       authenticated: !this.state.authenticated
-    }, ()=> {
-      if(!this.state.authenticated){
+    }, () => {
+      if (!this.state.authenticated) {
         sessionStorage.removeItem('authenticated');
       }
     });
@@ -63,18 +64,6 @@ class App extends Component {
               <Route path="/register" component={Register} />
               <PrivateRoute path="/private" component={PVRec} />
             </Switch>
-            {/* <AuthButton /> */}
-
-            {/* <header className="App-header">
-              <NavBar name={this.state.name} />
-            </header>
-            <Jumbotron>
-            <RoundAbout />
-              <h3>#vaccineswork</h3>
-            </Jumbotron>
-            <br />
-            <h2>Health Science News Below:</h2>
-            <FluidJumbo /> */}
 
             {/* <ul>
           <li>
