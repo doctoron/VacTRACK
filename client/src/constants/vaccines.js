@@ -1,9 +1,9 @@
 // import React from 'react';
 const vaccines = [
-    { name: 'IIV', needed: true },
-    { name: 'RIV', needed: true },
-    { name: 'TDAP', needed: true },
-    { name: 'MMR', needed: true, age: 65 },
+    { name: 'Influenza inactivate (IIV)', needed: true },
+    { name: 'Influenza recombinant (RIV)', needed: true },
+    { name: 'Tetanus, diptheria, pertussis (TDAP)', needed: true },
+    { name: 'Measles, mumps, rubella (MMR)', needed: true, age: 60 },
     { name: 'VAR', needed: true, age: 'date' },
     { name: 'RZV', needed: true, age: 'date' },
     { name: 'ZVL', needed: true, age: 'date' },
