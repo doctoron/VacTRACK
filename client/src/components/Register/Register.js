@@ -16,6 +16,7 @@ import Pregnancy from './Pregnancy';
 import CD4 from './CD4';
 // import App from '../../App';
 import moment from 'moment';
+import PVRec from '../../Pages/PVRec'
 
 //     This is the register component
 export default class Register extends React.Component {
@@ -293,7 +294,7 @@ export default class Register extends React.Component {
         <br />
         <FormGroup>
           {/* <h5>That's it! Just click "My Results" to find out which vaccines you may need.</h5> */}
-          <Button onClick={this.handleSubmit}>My Results</Button>
+          <Button color="success" href="/private" onClick={this.handleSubmit}>My Results</Button>
         </FormGroup>
       </Form >
     )

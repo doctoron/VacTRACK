@@ -5,6 +5,7 @@ const CDC = () => {
 
 < div >
     <h3>Vaccination information from the CDC</h3>
+    <p>Place into card in fluid jumbotron and style</p>
 </div >
   );
 

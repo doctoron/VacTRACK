@@ -120,7 +120,6 @@ export default class Login extends Component {
               <p><b>Not Yet Registered?</b></p>
               {this.renderRedirect()}
               <Button color="success" onClick={this.setRedirect}> Get Started </Button> {' '}
-        {/* How do I get my registration form to link here? */}
               {console.log('Getting Started Button', this.toggleNested)}
               <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
             </ModalFooter>

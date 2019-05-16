@@ -62,8 +62,8 @@ class MenuBar extends React.Component {
                 <Button color="danger" onClick={this.props.toggle}> Login</Button>}{" "}
 
               {this.props.auth
-                ?
-                <Button color="success" onClick={this.toggleNested}> MyVacTrack</Button>
+                ? 
+                <Button color="success" href="/private" onClick={this.toggleNested}> MyVacTrack</Button>
                 : null
               }
             </NavItem>
