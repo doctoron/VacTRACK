@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom"
 import Axios from 'axios';
 import RoundAbout from '../RoundAbout/RoundAbout';
-import Register from  '../Register'
+// import Register from  '../Register'
 import {
   Button,
   Form,
@@ -34,7 +34,7 @@ export default class Login extends Component {
   }
 
   handleChange = (event) => {
-    const { name, value } = event.target;
+    // const { name, value } = event.target;
     this.setState({
       [event.target.name]: event.target.value
     })

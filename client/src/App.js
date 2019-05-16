@@ -9,10 +9,9 @@ import {
 import 'bootstrap/dist/css/bootstrap.css';
 import PrivateRoute from './components/Auth/PrivateRoute';
 import PVRec from './Pages/PVRec';
+import Register from './components/Register';
 import Login from './components/LoginModal/Login';
 import MenuBar from './components/MenuBar';
-import Home from './Pages/Home';
-import Register from './components/Register'
 // import FluidJumbo from './components/FluidJumbo';
 // import RoundAbout from './components/RoundAbout';
 // import { Jumbotron, Button, Alert, Fade } from 'reactstrap';
@@ -64,15 +63,6 @@ class App extends Component {
               <Route path="/register" component={Register} />
               <PrivateRoute path="/private" component={PVRec} />
             </Switch>
-
-            {/* <ul>
-          <li>
-            <Link to="/public">Public Page With All Links to Newsfeeds, CDC and WHO will be active</Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page Contains Personal Vaccination Information</Link>
-          </li>
-        </ul> */}
 
           </div>
         </Router>

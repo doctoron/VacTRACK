@@ -16,7 +16,7 @@ import Pregnancy from './Pregnancy';
 import CD4 from './CD4';
 // import App from '../../App';
 import moment from 'moment';
-import PVRec from '../../Pages/PVRec'
+// import PVRec from '../../Pages/PVRec'
 
 //     This is the register component
 export default class Register extends React.Component {
@@ -39,7 +39,7 @@ export default class Register extends React.Component {
     zoster: false
   }
   handleChange = (event) => {
-    const { name, value } = event.target;
+    // const { name, value } = event.target;
     // console.log('Gender onChange', value);
     this.setState({
       [event.target.name]: event.target.value

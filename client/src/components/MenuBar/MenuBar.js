@@ -22,29 +22,29 @@ class MenuBar extends React.Component {
       isOpen: false
     };
   }
-  // toggle (e) {
-  //   console.log('this was clicked');
-  //     this.setState({
-  //     isOpen: !this.state.isOpen
-  //   });
-  // }
+  toggle (e) {
+    console.log('this was clicked');
+      this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   logOut (e) {
     e.preventDefault();
     sessionStorage.removeItem('authenticated');
-    console.log(this.props)
-    //this.props.toggle()
+    // console.log(this.props)
+    this.props.toggle()
     
-    // this.setState=({
-    //   isOpen: !this.state.isOpen
-    // })
+    this.setState=({
+      isOpen: !this.state.isOpen
+    })
     // How do I return to the login to start over here?
-    // this.props.toggle();
-    // this.props.history.push('/');
+    this.props.toggle();
+    this.props.history.push('/');
   }
-  // logIn (e) {
-  //   e.preventDefault();
-  //   this.props.toggle();
-  // }
+  logIn (e) {
+    e.preventDefault();
+    this.props.toggle();
+  }
 
   render () {
    //console.log(this.props)

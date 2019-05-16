@@ -3,40 +3,40 @@ import React from 'react';
 import moment from 'moment';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
-const myVaccines = [
-    {
-        name: 'Influenza inactivate (IIV) ', 
-        needed: true, 
-        age: 125, 
-        pregnancy: true, 
-        cd4below200: true, 
-        dose: '1 dose annually',
-    },
-    {
-        name: 'Influenza recombinant (RIV) ', 
-        needed: true, 
-        age: 125, 
-        pregnancy: true, 
-        cd4below200: true, 
-        dose: '1 dose annually',
-    },
-    {
-        name: 'Tetanus, diptheria, pertussis (TDAP) ', 
-        needed: true, 
-        age: 125, 
-        pregnancy: true, 
-        cd4below200: true, 
-        dose: '1 dose Tdap, the Td booster every 10yrs',
-    },
-    {
-        name: 'Measles, mumps, rubella (MMR) ', 
-        needed: true, 
-        age: 65, 
-        pregnancy: true, 
-        cd4below200: true, 
-        dose: '1 or 2 doses depending on indication (if born in 1957 or later)',
-    }
-];
+// const myVaccines = [
+//     {
+//         name: 'Influenza inactivate (IIV) ', 
+//         needed: true, 
+//         age: 125, 
+//         pregnancy: true, 
+//         cd4below200: true, 
+//         dose: '1 dose annually',
+//     },
+//     {
+//         name: 'Influenza recombinant (RIV) ', 
+//         needed: true, 
+//         age: 125, 
+//         pregnancy: true, 
+//         cd4below200: true, 
+//         dose: '1 dose annually',
+//     },
+//     {
+//         name: 'Tetanus, diptheria, pertussis (TDAP) ', 
+//         needed: true, 
+//         age: 125, 
+//         pregnancy: true, 
+//         cd4below200: true, 
+//         dose: '1 dose Tdap, the Td booster every 10yrs',
+//     },
+//     {
+//         name: 'Measles, mumps, rubella (MMR) ', 
+//         needed: true, 
+//         age: 65, 
+//         pregnancy: true, 
+//         cd4below200: true, 
+//         dose: '1 or 2 doses depending on indication (if born in 1957 or later)',
+//     }
+// ];
 
 const myUsers = [
     {
@@ -113,13 +113,9 @@ const PVRec = (myUsers) => {
     // let result = myUsers.filter(obj => {
     //     return obj.dob === 6
     //   })
-
     //   console.log(result)
-
     // testUser.find(dob => x.id === '45').foo;
-
     // console.log(`This person is ${age} years old.`);
-
     // const neededVaccines = vaccines.filter(vaccines => vaccines.age < age);
     // const vaccinesName = neededVaccines.map(vaccines => vaccines.name, vaccines.dose)
     // const vaccinesDose = neededVaccines.map(vaccinesDose => vaccines.name)
@@ -142,5 +138,6 @@ const PVRec = (myUsers) => {
     </div>
     )
 }
+PVRec();
 
 export default PVRec;
