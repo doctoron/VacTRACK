@@ -31,57 +31,60 @@
 //     console.log('This is the age', age);
 // }
 
-const testUsers = [{
-    id: "5cdbe797fc13ae5f39000000",
-    email: "mhassel@test.com",
-    username: "mhassel",
-    dob: "01/30/1959",
-    gender: "female",
-    pregnancy: true,
-    travelling: false,
-    immunity: true,
-    hiv: true,
-    cd4below200: false,
-    dormitory: false,
-    healthCareWorker: true,
-    conditons: true,
-    otherFactors: false,
-    zoster: false
-}]
-// {
-//     id: "5cdbe797fc13ae5f39000001",
-//     email: "cortensia@test.com",
-//     username: "cortensia",
-//     dob: "12/07/1992",
-//     gender: "male",
-//     pregnancy: false,
-//     travelling: true,
-//     immunity: false,
-//     hiv: true,
-//     cd4below200: true,
-//     dormitory: true,
-//     healthCareWorker: true,
-//     conditons: false,
-//     otherFactors: true,
-//     zoster: true
-// },
-// {
-//     id: "5cdbe797fc13ae5f39000002",
-//     email: "srenehan@test.com",
-//     username: "srenehan",
-//     dob: "03/11/1992",
-//     gender: "female",
-//     pregnancy: false,
-//     travelling: false,
-//     immunity: false,
-//     hiv: true,
-//     cd4below200: false,
-//     dormitory: false,
-//     healthCareWorker: true,
-//     conditons: true,
-//     otherFactors: false,
-//     zoster: false
-// }];
+const myUsers =
+    [
+        {
+            id: "5cdbe797fc13ae5f39000000",
+            email: "mhassel@test.com",
+            username: "mhassel",
+            dob: "01/30/1959",
+            gender: "female",
+            pregnancy: true,
+            travelling: false,
+            immunity: true,
+            hiv: true,
+            cd4below200: false,
+            dormitory: false,
+            healthCareWorker: true,
+            conditons: true,
+            otherFactors: false,
+            zoster: false
+        },
+        {
+            id: "5cdbe797fc13ae5f39000001",
+            email: "cortensia@test.com",
+            username: "cortensia",
+            dob: "12/07/1992",
+            gender: "male",
+            pregnancy: false,
+            travelling: true,
+            immunity: false,
+            hiv: true,
+            cd4below200: true,
+            dormitory: true,
+            healthCareWorker: true,
+            conditons: false,
+            otherFactors: true,
+            zoster: true
+        },
+        {
+            id: "5cdbe797fc13ae5f39000002",
+            email: "srenehan@test.com",
+            username: "srenehan",
+            dob: "03/11/1992",
+            gender: "female",
+            pregnancy: false,
+            travelling: false,
+            immunity: false,
+            hiv: true,
+            cd4below200: false,
+            dormitory: false,
+            healthCareWorker: true,
+            conditons: true,
+            otherFactors: false,
+            zoster: false
+        }
+    ];
 // {
 //     id: "5cdbe797fc13ae5f39000003",
 //     email: "mfourman@test.com",
@@ -201,4 +204,4 @@ const testUsers = [{
 //     zoster: false
 // }];
 
-export default testUsers;
+export default myUsers;
