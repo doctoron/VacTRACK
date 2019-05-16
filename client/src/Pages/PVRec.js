@@ -5,16 +5,36 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const myVaccines = [
     {
-        name: 'Influenza inactivate (IIV) ', needed: true, age: 125, pregnancy: true, cd4below200: true, dose: '1 dose annually',
+        name: 'Influenza inactivate (IIV) ', 
+        needed: true, 
+        age: 125, 
+        pregnancy: true, 
+        cd4below200: true, 
+        dose: '1 dose annually',
     },
     {
-        name: 'Influenza recombinant (RIV) ', needed: true, age: 125, pregnancy: true, cd4below200: true, dose: '1 dose annually',
+        name: 'Influenza recombinant (RIV) ', 
+        needed: true, 
+        age: 125, 
+        pregnancy: true, 
+        cd4below200: true, 
+        dose: '1 dose annually',
     },
     {
-        name: 'Tetanus, diptheria, pertussis (TDAP) ', needed: true, age: 125, pregnancy: true, cd4below200: true, dose: '1 dose Tdap, the Td booster every 10yrs',
+        name: 'Tetanus, diptheria, pertussis (TDAP) ', 
+        needed: true, 
+        age: 125, 
+        pregnancy: true, 
+        cd4below200: true, 
+        dose: '1 dose Tdap, the Td booster every 10yrs',
     },
     {
-        name: 'Measles, mumps, rubella (MMR) ', needed: true, age: 65, pregnancy: true, cd4below200: true, dose: '1 or 2 doses depending on indication (if born in 1957 or later)',
+        name: 'Measles, mumps, rubella (MMR) ', 
+        needed: true, 
+        age: 65, 
+        pregnancy: true, 
+        cd4below200: true, 
+        dose: '1 or 2 doses depending on indication (if born in 1957 or later)',
     }
 ];
 
@@ -72,7 +92,6 @@ const myUsers = [
     }
 ];
 
-
 for (let i = 0; i < myUsers.length; i++) {
     // let dob=(myUsers[i].dob);
     let calcAge = (dob) => {
@@ -117,10 +136,11 @@ const PVRec = (myUsers) => {
     VacTRACK is NOT HIPPA compliant and only 'mock data' should be used.  No personal information
     will be retained by CDC.
 
-    PLEASE NOTE: This list may include vaccines you may have had).
+    PLEASE NOTE: This list may include vaccines you may have had.
     Discuss the list with a doctor or your health care professional.
     * This vaccine assessment tool applies to adults 19 years or older.
     </div>
     )
 }
+
 export default PVRec;
