@@ -13,6 +13,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "client/build")));
 }
+if (proces.env.MONGODB_URI) {
+  // This executes if being connected in Heroku App
+  mongoose.connect(process.env.MONGO_URI);
+}
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/members", { useNewUrlParser: true });
