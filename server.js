@@ -13,18 +13,23 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "client/build")));
 }
-if (proces.env.MONGODB_URI) {
+if (process.env.MONGODB_URI) {
   // This executes if being connected in Heroku App
   mongoose.connect(process.env.MONGO_URI);
+} else {
+  // Connect to the Mongo DB
+  mongoose.connect("mongodb://localhost/members", { useNewUrlParser: true });
+  mongoose.Promise = global.Promise;
 }
-
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/members", { useNewUrlParser: true });
-mongoose.Promise = global.Promise;
-
-// Add routes, both API and view
-// /myRoutesHere /api
 app.use(routes);
+let db = mongoose.connection;
+db.on('error', (err)=> {
+  console.log('MOngoose Error: ',err);
+});
+
+db.once('open',() =>{
+console.log('Mongoose connection successful.');
+})
 
 // Build mode
 // Send every request to the React app

@@ -101,7 +101,7 @@ export default class Login extends Component {
       <div>
         {this.props.showModal &&
           <Modal isOpen={this.state.modal} className={this.props.className}>
-            <ModalHeader toggle={this.toggle}>MyVacTRACK-2 Login</ModalHeader>
+            <ModalHeader toggle={this.toggle.bind(this)}>MyVacTRACK-2 Login</ModalHeader>
             <ModalBody>
               <Form>
                 <FormGroup>
