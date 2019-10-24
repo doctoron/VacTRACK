@@ -4,7 +4,8 @@ The purpose of this app is to provide a means where one can know if they're up t
 ## Deployment:
 This app is deployed on Heroku: https://myvactrack.herokuapp.com
 
-## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This project was bootstrapped with create react app. 
+[Create React App](https://github.com/facebook/create-react-app).
 
 ## Use of ReactStrap
 Styling was bootstrapped utilizing ReactStrap grid and class library
