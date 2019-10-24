@@ -1,4 +1,4 @@
-### Purpose: 
+## Purpose: 
 The purpose of this app is to provide a means where one can know if they're up to date with their vaccinations. This is a MVP testing the concept of having an adult vaccination tracker that is mobile responsive.
 
 ## Deployment:
