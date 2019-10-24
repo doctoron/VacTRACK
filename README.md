@@ -1,10 +1,17 @@
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Purpose: 
+The purpose of this app is to provide a means where one can know if they're up to date with their vaccinations. This is a MVP testing the concept of having an adult vaccination tracker that is mobile responsive.
+
+## Deployment:
+This app is deployed on Heroku: https://myvactrack.herokuapp.com
+
+## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Use of ReactStrap
+Styling was bootstrapped utilizing ReactStrap grid and class library
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run: 
 
 ### `npm start`
 
