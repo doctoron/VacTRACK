@@ -16,7 +16,7 @@
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "mongo": "^0.1.0",
-    "mongoose": "^5.5.5",
+    "mongoose": "^5.7.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-datepicker": "^2.5.0",
